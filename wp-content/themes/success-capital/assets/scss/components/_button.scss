@@ -1,0 +1,29 @@
+a,
+button {
+  &.button {
+    font-size: 14px;
+    font-family: $Montserrat;
+    padding: 11px 50px;
+    text-transform: uppercase;
+    border-radius: 22px;
+    box-shadow: 1px 5px 9px -5px $light-grey;
+    &.bg-blue-left {
+      color: $white;
+    }
+    &.bg-white {
+      color: $dark-blue;
+      background-color: $white;
+    }
+    &.bg-blue-bl-small {
+      color: $white;
+      text-transform: capitalize;
+      padding: 11px 7px;
+      border-radius: 0px 5px 5px 0px;
+    }
+  }
+  @media #{phone-only} {
+    &.button {
+      padding: 11px 25px;
+    }
+  }
+}

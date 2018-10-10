@@ -1,0 +1,14 @@
+.bg-blue-left{
+    background-image: linear-gradient(to left, $dark-blue, $dark-blue, $light-blue);
+}
+
+.bg-blue-bl{
+    background-image: linear-gradient(to bottom left, $dark-blue, $dark-blue, $light-blue);
+}
+
+.bg-blue-tr{
+    background-image: linear-gradient(to top right, $dark-blue, $dark-blue, $light-blue);
+}
+.bg-blue-bl-small{
+    background-image: linear-gradient(to bottom left, $dark-blue, $dark-blue, $light-blue);
+}

@@ -1,0 +1,72 @@
+.transaction-card {
+  width: 31%;
+  flex: 31%;
+  min-width: 320px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 10px;
+  box-shadow: 0 3px 6px #0000002e;
+
+  .transaction-carousel {
+    .carousel-image {
+      display: block;
+      height: 200px;
+      width: 100%;
+      object-fit: cover;
+
+      &:nth-child(n + 2) {
+        // TODO : Remove after carousel implemented
+        display: none;
+      }
+    }
+    
+  }
+  .card-footer{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    .title{
+      text-align: center;
+      font-size: 14px;
+      color: $black;
+      padding-top:20px;
+      padding-bottom: 50px;
+    }
+    .price{
+      text-align: center;
+      font-size: 18px;
+      color: $light-grey;
+      position: relative;
+      letter-spacing: 1px;
+      &:before{
+        top: -6px;
+        left:0;
+        right: 0;
+        margin: auto;
+        position: absolute;
+        content:"";
+        height: 1px;
+        width: 40px;
+        background-color: $blue;
+      }
+    }
+    .informations{
+      ul{
+        display: flex;
+        padding: 0 20px;
+        li{
+          flex: 33%;
+          width: 33%;
+          display: flex;
+          justify-content: center;
+          img{
+            width: auto;
+            height: 15px;
+            padding-right: 10px;
+          }
+        }
+      }
+    }
+  }
+  @media #{$desktop-up}{}
+}

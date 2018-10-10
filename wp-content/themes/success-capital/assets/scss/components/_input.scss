@@ -1,0 +1,12 @@
+.input{
+    display:flex;
+    flex-direction: column;
+    label{
+        padding-bottom: 5px;
+    }
+    input,textarea{
+        border: none;
+        border-bottom: 1px solid $black;
+        font-size: 15px;
+    }
+}

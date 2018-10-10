@@ -1,0 +1,12 @@
+.transactions {
+  @extend .container--main;
+
+  .transactions--ajax {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: -10px;
+    margin-top: 20px;
+    margin-bottom: 70px;
+  }
+}

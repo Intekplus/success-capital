@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34.774 48.999">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #26499b;
+      }
+    </style>
+  </defs>
+  <g id="Groupe_172" data-name="Groupe 172" transform="translate(-9.999 -0.999)">
+    <path id="Tracé_378" data-name="Tracé 378" class="cls-1" d="M36.645,19.322a6.322,6.322,0,1,0-6.322,6.322A6.33,6.33,0,0,0,36.645,19.322Zm-6.322,4.742a4.742,4.742,0,1,1,4.742-4.742A4.747,4.747,0,0,1,30.322,24.064Z" transform="translate(-2.936 -2.517)"/>
+    <path id="Tracé_379" data-name="Tracé 379" class="cls-1" d="M31.161,17a3.161,3.161,0,1,0,3.161,3.161A3.164,3.164,0,0,0,31.161,17Zm0,4.742a1.581,1.581,0,1,1,1.581-1.581A1.582,1.582,0,0,1,31.161,21.742Z" transform="translate(-3.775 -3.355)"/>
+    <rect id="Rectangle_1097" data-name="Rectangle 1097" class="cls-1" width="1.581" height="1.581" transform="translate(26.596 7.322)"/>
+    <rect id="Rectangle_1098" data-name="Rectangle 1098" class="cls-1" width="1.581" height="1.581" transform="translate(20.122 10.659) rotate(-45)"/>
+    <rect id="Rectangle_1099" data-name="Rectangle 1099" class="cls-1" width="1.581" height="1.581" transform="translate(17.903 16.015)"/>
+    <rect id="Rectangle_1100" data-name="Rectangle 1100" class="cls-1" width="1.581" height="1.581" transform="translate(20.121 22.953) rotate(-45)"/>
+    <rect id="Rectangle_1101" data-name="Rectangle 1101" class="cls-1" width="1.581" height="1.581" transform="translate(26.596 24.709)"/>
+    <rect id="Rectangle_1102" data-name="Rectangle 1102" class="cls-1" width="1.581" height="1.581" transform="translate(32.415 22.953) rotate(-45)"/>
+    <rect id="Rectangle_1103" data-name="Rectangle 1103" class="cls-1" width="1.581" height="1.581" transform="translate(35.289 16.015)"/>
+    <rect id="Rectangle_1104" data-name="Rectangle 1104" class="cls-1" width="1.581" height="1.581" transform="translate(32.416 10.659) rotate(-45)"/>
+    <rect id="Rectangle_1105" data-name="Rectangle 1105" class="cls-1" width="1.581" height="1.581" transform="translate(28.177 31.031)"/>
+    <rect id="Rectangle_1106" data-name="Rectangle 1106" class="cls-1" width="1.581" height="1.581" transform="translate(25.016 31.031)"/>
+    <path id="Tracé_380" data-name="Tracé 380" class="cls-1" d="M39.339,5.759A17.387,17.387,0,0,0,10,18.115,17.2,17.2,0,0,0,15.238,30.8a13.514,13.514,0,0,1,4.245,9.68v3.192H35.289V40.568a13.727,13.727,0,0,1,4.282-9.8,17.363,17.363,0,0,0-.232-25.009ZM33.709,42.1H21.064V40.515H33.712c0,.018,0,.036,0,.054Zm4.755-12.456a15.486,15.486,0,0,0-4.656,9.295h-4.05V34.192H28.177v4.742H26.6V34.192H25.016v4.742H20.977a15.258,15.258,0,0,0-4.634-9.262,15.633,15.633,0,0,1-4.76-11.534A15.805,15.805,0,0,1,38.252,6.907a15.781,15.781,0,0,1,.212,22.732Z" transform="translate(0 0)"/>
+    <path id="Tracé_381" data-name="Tracé 381" class="cls-1" d="M30.532,60.161c-2.179,0-3.951-1.418-3.951-3.161H25c0,2.615,2.482,4.742,5.532,4.742S36.064,59.615,36.064,57H34.484C34.484,58.743,32.711,60.161,30.532,60.161Z" transform="translate(-3.146 -11.744)"/>
+    <path id="Tracé_382" data-name="Tracé 382" class="cls-1" d="M37.89,15.619l-.5,1.5,2.857.952v3.6l-3.721,1.241,1.754,3.508-2.547,2.547-3.508-1.754-1.241,3.721h-3.6l-1.241-3.721-3.508,1.754-2.95-2.95-1.117,1.117,3.755,3.756,2.9-1.449,1.024,3.073h5.881l1.024-3.073,2.9,1.449L40.2,26.734l-1.449-2.9,3.073-1.024V16.931Z" transform="translate(-1.796 -3.066)"/>
+    <path id="Tracé_383" data-name="Tracé 383" class="cls-1" d="M20.438,20.4l-2.857-.952v-3.6L21.3,14.6l-1.754-3.508,2.547-2.547L25.6,10.3l1.241-3.721h3.6L31.687,10.3l3.508-1.754,2.95,2.95,1.117-1.117L35.507,6.624l-2.9,1.449L31.585,5H25.7L24.68,8.073l-2.9-1.449-4.159,4.159,1.449,2.9L16,14.7v5.881L19.937,21.9Z" transform="translate(-1.258 -0.839)"/>
+  </g>
+</svg>

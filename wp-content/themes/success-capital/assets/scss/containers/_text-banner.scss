@@ -1,0 +1,9 @@
+.text-banner-wrapper{
+    color: $blue;
+    font-size: 30px;
+    padding: 75px 35px;
+    text-align: center;
+    @media #{$desktop-up}{
+        padding: 75px 20%;
+    }
+}

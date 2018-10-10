@@ -1,0 +1,65 @@
+.accordion-wrapper {
+  border-bottom: 1px solid $light-grey;
+  margin-bottom: 40px;
+  &:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+  .title {
+    font-size: 32px;
+    position: relative;
+    padding-bottom: 20px;
+    padding-right: 36px;
+    cursor: pointer;
+    &::after,
+    &::before {
+      position: absolute;
+      content: "";
+      width: 32px;
+      right: 0;
+      height: 3px;
+      background-color: $light-grey;
+      transition: all 0.3s ease-in-out;
+    }
+    &::before {
+      transform: rotate(45deg);
+      top: 9px;
+    }
+    &::after {
+      transform: rotate(-45deg);
+      top: 30px;
+    }
+  }
+  &:last-child {
+    .title {
+      padding-bottom: 0;
+    }
+  }
+  .accordion-content {
+    font-size: 14px;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+  }
+  &.active {
+    .title {
+      &::before {
+        top: 30px;
+        right: 21px;
+      }
+      &::before,
+      &::after {
+        background-color: $light-blue;
+      }
+    }
+    .accordion-content {
+      max-height: 1000px;
+      padding: 20px 0 40px 0;
+    }
+  }
+  @media #{$desktop-up} {
+    .title {
+      font-size: 40px;
+    }
+  }
+}
