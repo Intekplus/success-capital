@@ -1,4 +1,7 @@
 .transaction-agent {
+  .map {
+    box-shadow: 0 3px 6px #0000002e;
+  }
   .transaction-agent-wrapper {
     @extend .container--main;
     .transaction-agent-card {
@@ -6,6 +9,7 @@
       width: auto;
       max-width: 300px;
       min-width: 300px;
+      box-shadow: 0 3px 6px #0000002e;
 
       .button {
         display: block;

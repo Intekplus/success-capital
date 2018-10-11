@@ -20,5 +20,5 @@
       </div>
     </div>
   </div>
-<?php include( locate_template("./views/containers/map-banner.php")); ?>
+  <?php include( locate_template("./views/containers/map-banner.php")); ?>
 </div>

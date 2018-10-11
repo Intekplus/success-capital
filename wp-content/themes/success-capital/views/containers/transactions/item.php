@@ -16,7 +16,7 @@
     <div class="informations">
       <ul>
         <li>
-          <img src="<?php echo get_site_url(); ?>/wp-content/themes/success-capital/assets/img/images/placeholder.svg">
+          <img src="<?php echo get_site_url(); ?>/wp-content/themes/success-capital/assets/img/images/map.svg">
           <?php echo $data['location'] ?>
         </li>
         <li>
