@@ -14,7 +14,7 @@
         <div class="employee-desc">
           <?= $description ?>
         </div>
-        <a href="#" class="button bg-blue-left">
+        <a href="#" data-modal="#modal" class="button bg-blue-left modal__trigger">
           <?= __("Contacter", "intek-theme") ?>
         </a>
       </div>

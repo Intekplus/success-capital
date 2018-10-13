@@ -125,7 +125,6 @@ $(function() {
 
   // Click away listener
   $(document).on('click', function(event) {
-    console.log(event.target.className);
     if (
       event.target.className !== 'dropdown-content' &&
       event.target.className !== 'dropdown-label' &&

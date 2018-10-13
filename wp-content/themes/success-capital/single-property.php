@@ -30,6 +30,7 @@ get_header(); ?>
     <?php include(locate_template("./views/containers/header-info-transaction.php")); ?>
     <?php include(locate_template("./views/containers/transaction-agent.php")); ?>
     <?php include(locate_template("./views/containers/transaction-discover.php")); ?>
+    <?php include(locate_template("./views/containers/transactions/contact-modal.php")); ?>
 	</div>
 </div>
 

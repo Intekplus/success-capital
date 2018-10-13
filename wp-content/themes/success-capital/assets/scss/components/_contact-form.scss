@@ -79,6 +79,7 @@
       padding: 50px;
       display: flex;
       justify-content: center;
+      cursor: pointer;
     }
   }
   @media #{$large-tablet-up} {
@@ -109,6 +110,10 @@
         justify-content: space-between;
         .obligatoire {
           text-align: right;
+          width: 150px;
+        }
+        p {
+          width: 320px;
         }
       }
     }
