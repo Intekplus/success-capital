@@ -159,7 +159,6 @@ $(function() {
   });
 
   $('.dropdown-item input').click(function(e) {
-    console.log($(this).attr('value'));
     $(this)
       .parents('.dropdown-wrapper')
       .addClass('selection');
@@ -202,15 +201,11 @@ $(function() {
     }
   }
   function add_marker($marker, map) {
-    // var
-    console.log($marker);
-    var protocol = window.location.protocol;
-    var host = window.location.hostname;
     var latlng = new google.maps.LatLng(
       $marker.attr('data-lat'),
       $marker.attr('data-lng'),
     );
-    console.log($marker.attr('data-lat'));
+
     var iconUrl =
       '/wp-content/themes/success-capital/assets/img/images/map-icon.svg';
 
