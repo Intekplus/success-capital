@@ -46,12 +46,11 @@
     }
   }
   .info-section {
-    background: $grey;
-
     .infos {
       @extend .container--main;
       padding-top: 20px;
       padding-bottom: 20px;
+      background: rgba($grey, 0.8);
 
       ul {
         margin: -10px;
@@ -124,8 +123,6 @@
       position: absolute;
       bottom: 0;
       width: 100%;
-      opacity: 0.9;
-
       .infos {
         padding-right: 0 !important;
         margin-left: 0 !important;

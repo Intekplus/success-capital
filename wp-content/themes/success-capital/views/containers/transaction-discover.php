@@ -21,12 +21,15 @@ $args["tax_query"][] =
 $property = new WP_Query( $args );
 
 if( $property->have_posts() ) :
+  echo '<div class="discover-carousel-container">';
+  echo '<h2>' . __tr('Découvrez également') . '</h2>';
+  echo '<div class="discover-carousel owl-theme owl-carousel">';
   while( $property->have_posts() ) :
     $property->the_post();
     $data = [
       "title" => get_field('title'),
       "images" => get_field('images'),
-      "price" => get_field('price'),
+      "price" => number_format(get_field('price'), 0, ',', ' '),
       "area" => get_field('area'),
       "rooms" => get_field('rooms'),
       "description" => get_field('description'),
@@ -37,6 +40,8 @@ if( $property->have_posts() ) :
       ];
     include( locate_template("./views/containers/transactions/item.php"));
   endwhile;
+  echo '</div>';
+  echo '</div>';
   wp_reset_postdata();
 endif;
 

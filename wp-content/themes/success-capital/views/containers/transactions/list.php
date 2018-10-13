@@ -45,7 +45,7 @@ function filtered_properties( $budget, $location, $room ) {
                 $data = [
                     "title" => get_field('title'),
                     "images" => get_field('images'),
-                    "price" => get_field('price'),
+                    "price" => number_format(get_field('price'), 0, ',', ' '),
                     "area" => get_field('area'),
                     "rooms" => get_field('rooms'),
                     "description" => get_field('description'),

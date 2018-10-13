@@ -2,13 +2,14 @@
   width: 31%;
   flex: 31%;
   min-width: 320px;
+  max-width: 400px;
   border-radius: 10px;
   overflow: hidden;
   margin: 10px;
   box-shadow: 0 3px 6px #0000002e;
 
-  .transaction-carousel {
-    .carousel-image {
+  .transaction {
+    .transaction-image {
       display: block;
       height: 200px;
       width: 100%;
@@ -43,7 +44,7 @@
         right: 0;
         margin: auto;
         position: absolute;
-        content: "";
+        content: '';
         height: 1px;
         width: 40px;
         background-color: $blue;
@@ -52,10 +53,9 @@
     .informations {
       ul {
         display: flex;
-        padding: 0 20px;
+        padding: 10px 5px;
+        justify-content: space-around;
         li {
-          flex: 33%;
-          width: 33%;
           display: flex;
           justify-content: center;
           align-items: center;
@@ -67,7 +67,5 @@
         }
       }
     }
-  }
-  @media #{$desktop-up} {
   }
 }

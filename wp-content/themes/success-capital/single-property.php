@@ -2,7 +2,7 @@
 $data = [
   "title" => get_field('title'),
   "images" => get_field('images'),
-  "price" => get_field('price'),
+  "price" => number_format(get_field('price'), 0, ',', ' '),
   "area" => get_field('area'),
   "rooms" => get_field('rooms'),
   "description" => get_field('description'),
@@ -10,10 +10,10 @@ $data = [
   "area" => get_field('area'),
   "id" => get_field('id'),
   "type" => get_field('type'),
-  "budget" => get_the_terms( get_the_ID(), 'budget' )[0]->name,
-  "room" => get_the_terms( get_the_ID(), 'room' )[0]->name,
+  "budget" => get_the_terms(get_the_ID(), 'budget')[0]->name,
+  "room" => get_the_terms(get_the_ID(), 'room')[0]->name,
   "location" => get_field('location'),
-  "location_tax" => get_the_terms( get_the_ID(), 'location' )[0]->name,
+  "location_tax" => get_the_terms(get_the_ID(), 'location')[0]->name,
   "bedrooms" => get_field('bedrooms'),
   "is_transaction" => true,
   "backlink" => __("/transactions", "intek-theme"),
@@ -26,10 +26,10 @@ get_header(); ?>
 
 <div class="wrap">
 	<div class="content container-fluid">
-    <?php include( locate_template("./views/containers/image-preview-banner.php")); ?>
-    <?php include( locate_template("./views/containers/header-info-transaction.php")); ?>
-    <?php include( locate_template("./views/containers/transaction-agent.php")); ?>
-    <?php include( locate_template("./views/containers/transaction-discover.php")); ?>
+    <?php include(locate_template("./views/containers/image-preview-banner.php")); ?>
+    <?php include(locate_template("./views/containers/header-info-transaction.php")); ?>
+    <?php include(locate_template("./views/containers/transaction-agent.php")); ?>
+    <?php include(locate_template("./views/containers/transaction-discover.php")); ?>
 	</div>
 </div>
 

@@ -1,0 +1,48 @@
+.discover-carousel-container {
+  margin-bottom: 50px;
+  padding: 0 5px;
+  h2 {
+    color: $black;
+    font-family: $Playfair;
+    font-weight: normal;
+    margin-bottom: 20px;
+    font-size: 28px;
+  }
+
+  .owl-carousel {
+    .owl-stage-outer {
+      padding-bottom: 5px;
+      .transaction-card {
+        width: 320px;
+        margin: auto;
+      }
+    }
+  }
+
+  @media #{$tablet-up} {
+    h2 {
+      font-family: $Playfair;
+      font-weight: normal;
+      margin-bottom: 20px;
+    }
+    .owl-carousel {
+      .owl-stage-outer {
+        .transaction-card {
+          width: 350px;
+        }
+      }
+    }
+  }
+
+  @media #{$large-tablet-up} {
+    h2 {
+      margin-left: 140px;
+      font-size: 36px;
+    }
+    .owl-carousel {
+      .owl-stage-outer {
+        margin-left: 140px;
+      }
+    }
+  }
+}

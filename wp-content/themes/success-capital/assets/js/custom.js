@@ -1,27 +1,27 @@
 "use strict";
 
 $(function () {});
-"use strict";
+'use strict';
 
 $(function () {
   /**
    * Menu
    */
-  $(".menu-burger").click(function (e) {
+  $('.menu-burger').click(function (e) {
     e.stopPropagation();
-    var container = $(".menu-container");
-    container.toggleClass("active");
-    $(".menu-item-has-children").removeClass("active");
-    $("body").toggleClass("noScrolling");
+    var container = $('.menu-container');
+    container.toggleClass('active');
+    $('.menu-item-has-children').removeClass('active');
+    $('body').toggleClass('noScrolling');
   });
-  $(".menu-item-has-children > a").click(function (e) {
+  $('.menu-item-has-children > a').click(function (e) {
     e.preventDefault();
-    $(this).parent(".menu-item-has-children").toggleClass("active");
+    $(this).parent('.menu-item-has-children').toggleClass('active');
   });
   /**
    * Carousel
    */
-  $(".partner-carousel").owlCarousel({
+  $('.partner-carousel').owlCarousel({
     loop: true,
     margin: 10,
     nav: true,
@@ -34,14 +34,14 @@ $(function () {
       }
     }
   });
-  $(".quotes-carousel").owlCarousel({
+  $('.quotes-carousel').owlCarousel({
     loop: true,
     margin: 10,
     nav: false,
     items: 1,
     dots: true
   });
-  $(".global-carousel").owlCarousel({
+  $('.global-carousel').owlCarousel({
     loop: true,
 
     nav: true,
@@ -64,7 +64,16 @@ $(function () {
     },
     dots: false
   });
-  $(".image-preview-carousel").owlCarousel({
+
+  $('.image-preview-carousel').owlCarousel({
+    loop: false,
+    margin: 20,
+    nav: false,
+    dots: false,
+    autoWidth: true
+  });
+
+  $('.discover-carousel').owlCarousel({
     loop: false,
     margin: 20,
     nav: false,
@@ -76,53 +85,53 @@ $(function () {
    * Image preview
    */
 
-  $(".image-preview-item").click(function (e) {
+  $('.image-preview-item').click(function (e) {
     e.preventDefault();
-    $(".image-preview-item").removeClass("active");
-    $(this).addClass("active");
-    var nextImage = $(this).attr("src");
-    $(".image-section").css("background-image", "url(" + nextImage + ")");
+    $('.image-preview-item').removeClass('active');
+    $(this).addClass('active');
+    var nextImage = $(this).attr('src');
+    $('.image-section').css('background-image', 'url(' + nextImage + ')');
   });
 
   /**
    * Accordion
    */
-  $(".accordion-wrapper .title").click(function (e) {
+  $('.accordion-wrapper .title').click(function (e) {
     e.preventDefault();
-    $(this).parent(".accordion-wrapper").toggleClass("active");
+    $(this).parent('.accordion-wrapper').toggleClass('active');
   });
 
   /**
    * Dropdown
    */
-  $(".dropdown-label").click(function (e) {
-    $(".dropdown-content").not($(this).next()).slideUp();
-    $(".dropdown-content").parent().removeClass("active");
-    $(this).next().slideToggle().parent().addClass("active");
+  $('.dropdown-label').click(function (e) {
+    $('.dropdown-content').not($(this).next()).slideUp();
+    $('.dropdown-content').parent().removeClass('active');
+    $(this).next().slideToggle().parent().addClass('active');
   });
 
   // Click away listener
-  $(document).on("click", function (event) {
+  $(document).on('click', function (event) {
     console.log(event.target.className);
-    if (event.target.className !== "dropdown-content" && event.target.className !== "dropdown-label" && event.target.className !== "dropdown-item" && event.target.className !== "dropdown-wrapper") {
-      $(".dropdown-content").slideUp();
-      $(".dropdown-content").parent().removeClass("active");
+    if (event.target.className !== 'dropdown-content' && event.target.className !== 'dropdown-label' && event.target.className !== 'dropdown-item' && event.target.className !== 'dropdown-wrapper') {
+      $('.dropdown-content').slideUp();
+      $('.dropdown-content').parent().removeClass('active');
     }
   });
 
   /**
    * Transaction filters
    */
-  $(".properties_filters").submit(function (e) {
+  $('.properties_filters').submit(function (e) {
     e.preventDefault();
-    var formData = "action=ajax_filtered_properties&" + $(this).serialize();
+    var formData = 'action=ajax_filtered_properties&' + $(this).serialize();
 
     $.ajax({
       url: ajaxurl,
       data: formData,
-      method: "POST",
+      method: 'POST',
       success: function success(data) {
-        $(".transactions--ajax").html(data);
+        $('.transactions--ajax').html(data);
       },
       error: function error(err) {
         console.log(err); // TODO: Error handling
@@ -130,14 +139,14 @@ $(function () {
     });
   });
 
-  $(".dropdown-item input").click(function (e) {
-    console.log($(this).attr("value"));
-    $(this).parents(".dropdown-wrapper").addClass("selection");
-    $(this).parents(".dropdown-wrapper").find(".dropdown-label").text($(this).attr("value"));
+  $('.dropdown-item input').click(function (e) {
+    console.log($(this).attr('value'));
+    $(this).parents('.dropdown-wrapper').addClass('selection');
+    $(this).parents('.dropdown-wrapper').find('.dropdown-label').text($(this).attr('value'));
   });
-  $(".search-button-wrapper a").click(function (e) {
+  $('.search-button-wrapper a').click(function (e) {
     e.preventDefault();
-    $(this).parents(".properties_filters").submit();
+    $(this).parents('.properties_filters').submit();
   });
 
   /**
@@ -168,9 +177,9 @@ $(function () {
     console.log($marker);
     var protocol = window.location.protocol;
     var host = window.location.hostname;
-    var latlng = new google.maps.LatLng($marker.attr("data-lat"), $marker.attr("data-lng"));
-    console.log($marker.attr("data-lat"));
-    var iconUrl = "/wp-content/themes/success-capital/assets/img/images/map-icon.svg";
+    var latlng = new google.maps.LatLng($marker.attr('data-lat'), $marker.attr('data-lng'));
+    console.log($marker.attr('data-lat'));
+    var iconUrl = '/wp-content/themes/success-capital/assets/img/images/map-icon.svg';
 
     var icon = {
       url: iconUrl,
@@ -189,10 +198,10 @@ $(function () {
     if ($marker.html()) {
       // create info window
       var infowindow = new google.maps.InfoWindow({
-        content: $marker.attr("address")
+        content: $marker.attr('address')
       });
       // show info window when marker is clicked
-      google.maps.event.addListener(marker, "click", function () {
+      google.maps.event.addListener(marker, 'click', function () {
         infowindow.open(map, marker);
         map.panTo(marker.position);
         map.setZoom(16);
@@ -202,62 +211,62 @@ $(function () {
   function new_map($el) {
     // var
     geocoder = new google.maps.Geocoder();
-    var styledMap = [{ elementType: "geometry", stylers: [{ color: "#f5f5f5" }] }, { elementType: "labels.icon", stylers: [{ visibility: "off" }] }, { elementType: "labels.text.fill", stylers: [{ color: "#616161" }] }, { elementType: "labels.text.stroke", stylers: [{ color: "#f5f5f5" }] }, {
-      featureType: "administrative.land_parcel",
-      elementType: "labels.text.fill",
-      stylers: [{ color: "#bdbdbd" }]
+    var styledMap = [{ elementType: 'geometry', stylers: [{ color: '#f5f5f5' }] }, { elementType: 'labels.icon', stylers: [{ visibility: 'off' }] }, { elementType: 'labels.text.fill', stylers: [{ color: '#616161' }] }, { elementType: 'labels.text.stroke', stylers: [{ color: '#f5f5f5' }] }, {
+      featureType: 'administrative.land_parcel',
+      elementType: 'labels.text.fill',
+      stylers: [{ color: '#bdbdbd' }]
     }, {
-      featureType: "poi",
-      elementType: "geometry",
-      stylers: [{ color: "#eeeeee" }]
+      featureType: 'poi',
+      elementType: 'geometry',
+      stylers: [{ color: '#eeeeee' }]
     }, {
-      featureType: "poi",
-      elementType: "labels.text.fill",
-      stylers: [{ color: "#757575" }]
+      featureType: 'poi',
+      elementType: 'labels.text.fill',
+      stylers: [{ color: '#757575' }]
     }, {
-      featureType: "poi.park",
-      elementType: "geometry",
-      stylers: [{ color: "#e5e5e5" }]
+      featureType: 'poi.park',
+      elementType: 'geometry',
+      stylers: [{ color: '#e5e5e5' }]
     }, {
-      featureType: "poi.park",
-      elementType: "labels.text.fill",
-      stylers: [{ color: "#9e9e9e" }]
+      featureType: 'poi.park',
+      elementType: 'labels.text.fill',
+      stylers: [{ color: '#9e9e9e' }]
     }, {
-      featureType: "road",
-      elementType: "geometry",
-      stylers: [{ color: "#ffffff" }]
+      featureType: 'road',
+      elementType: 'geometry',
+      stylers: [{ color: '#ffffff' }]
     }, {
-      featureType: "road.arterial",
-      elementType: "labels.text.fill",
-      stylers: [{ color: "#757575" }]
+      featureType: 'road.arterial',
+      elementType: 'labels.text.fill',
+      stylers: [{ color: '#757575' }]
     }, {
-      featureType: "road.highway",
-      elementType: "geometry",
-      stylers: [{ color: "#dadada" }]
+      featureType: 'road.highway',
+      elementType: 'geometry',
+      stylers: [{ color: '#dadada' }]
     }, {
-      featureType: "road.highway",
-      elementType: "labels.text.fill",
-      stylers: [{ color: "#616161" }]
+      featureType: 'road.highway',
+      elementType: 'labels.text.fill',
+      stylers: [{ color: '#616161' }]
     }, {
-      featureType: "road.local",
-      elementType: "labels.text.fill",
-      stylers: [{ color: "#9e9e9e" }]
+      featureType: 'road.local',
+      elementType: 'labels.text.fill',
+      stylers: [{ color: '#9e9e9e' }]
     }, {
-      featureType: "transit.line",
-      elementType: "geometry",
-      stylers: [{ color: "#e5e5e5" }]
+      featureType: 'transit.line',
+      elementType: 'geometry',
+      stylers: [{ color: '#e5e5e5' }]
     }, {
-      featureType: "transit.station",
-      elementType: "geometry",
-      stylers: [{ color: "#eeeeee" }]
+      featureType: 'transit.station',
+      elementType: 'geometry',
+      stylers: [{ color: '#eeeeee' }]
     }, {
-      featureType: "water",
-      elementType: "geometry",
-      stylers: [{ color: "#c9c9c9" }]
+      featureType: 'water',
+      elementType: 'geometry',
+      stylers: [{ color: '#c9c9c9' }]
     }, {
-      featureType: "water",
-      elementType: "labels.text.fill",
-      stylers: [{ color: "#9e9e9e" }]
+      featureType: 'water',
+      elementType: 'labels.text.fill',
+      stylers: [{ color: '#9e9e9e' }]
     }];
     var styledMapType = new google.maps.StyledMapType(styledMap);
     // vars
@@ -266,21 +275,21 @@ $(function () {
       center: new google.maps.LatLng(0, 0),
       //mapTypeId: google.maps.MapTypeId.ROADMAP
       mapTypeControlOptions: {
-        mapTypeIds: ["roadmap", "satellite", "hybrid", "terrain", "styled_map"]
+        mapTypeIds: ['roadmap', 'satellite', 'hybrid', 'terrain', 'styled_map']
       }
     };
     // create map
     var map = new google.maps.Map($el[0], args);
 
-    map.mapTypes.set("styled_map", styledMapType);
-    map.setMapTypeId("styled_map");
+    map.mapTypes.set('styled_map', styledMapType);
+    map.setMapTypeId('styled_map');
     return map;
   }
-  $(".map").each(function () {
+  $('.map').each(function () {
     // create map
     map = new_map($(this));
     map.markers = [];
-    var $marker = $(".marker");
+    var $marker = $('.marker');
     add_marker($($marker[0]), map);
     center_map(map);
   });
