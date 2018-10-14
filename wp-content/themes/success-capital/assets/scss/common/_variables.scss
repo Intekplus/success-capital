@@ -1,20 +1,20 @@
 /** Import Bootstrap functions */
-@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400');
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400|Playfair+Display:400,700");
 
-
-$Montserrat: 'Montserrat', sans-serif;
-$Playfair: "Playfair Regular";
+$Montserrat: "Montserrat", sans-serif;
+$Playfair: "Playfair Display";
 //COLOR
 $white: #fff;
 $lighter-blue: rgba(241, 249, 255, 0.8);
-$light-blue: #729AD0;
-$blue: #26499B;
-$dark-blue: #27499A;
+$light-blue: #729ad0;
+$subtle-blue: #e9edf2;
+$blue: #26499b;
+$dark-blue: #27499a;
 
 $light-grey: #999999;
 $grey: #444444;
 $black: #333333;
 
-$back-ground-gray:#F7F7F7;
+$back-ground-gray: #f7f7f7;
 
 $gray-shadow: #c5c5c5;
