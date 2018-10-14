@@ -1,0 +1,88 @@
+.pagination-container {
+  background-color: $light-blue;
+  border-radius: 6px;
+  margin-bottom: 50px;
+  .pagination {
+    padding: 2px 0;
+    text-align: center;
+    ul {
+      padding-left: 0;
+      li {
+        display: inline-block;
+        margin: 0 2px;
+        width: 30px;
+        text-align: center;
+        a:not(.prev):not(.next),
+        span {
+          display: block;
+          height: 30px;
+          width: 30px;
+          line-height: 30px;
+          border-radius: 6px;
+          color: #fff;
+        }
+        span {
+          color: $light-blue;
+          background-color: #fff;
+        }
+
+        .next,
+        .prev {
+          position: relative;
+          display: block;
+          width: 100%;
+          height: 100%;
+        }
+
+        .next:after,
+        .next:before {
+          position: absolute;
+          content: '';
+          width: 7px;
+          right: 0;
+          height: 1px;
+          background-color: #fff;
+        }
+
+        .next:after {
+          -webkit-transform: rotate(-45deg);
+          -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+          top: 9px;
+        }
+
+        .next:before {
+          -webkit-transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+          top: 4.5px;
+        }
+
+        .prev:after {
+          -webkit-transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+          top: 9px;
+        }
+
+        .prev:before {
+          -webkit-transform: rotate(-45deg);
+          -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+          top: 4.5px;
+        }
+
+        .prev:after,
+        .prev:before {
+          position: absolute;
+          content: '';
+          width: 7px;
+          left: 0;
+          height: 1px;
+          background-color: #fff;
+        }
+
+      }
+    }
+  }
+}
