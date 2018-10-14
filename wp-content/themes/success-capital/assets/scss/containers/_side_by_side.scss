@@ -74,6 +74,27 @@
       max-width: 450px;
     }
   }
+  ul{
+    color: $blue;
+    font-size: 25px;
+    li{
+      font-size: 14px;
+      color: $black;
+      position: relative;
+      padding: 10px 0;
+      &:before{
+        width: 6px;
+        height: 6px;
+        border-radius: 14px;
+        background-color: $blue;
+        content: "";
+        position: absolute;
+        left: -22px;
+        top: 16px;
+
+      }
+    }
+  }
   @media #{$tablet-up} {
     .image-container {
       .partner-banner {

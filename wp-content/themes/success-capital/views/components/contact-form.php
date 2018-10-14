@@ -26,7 +26,7 @@
             <span class="obligatoire"><?php _tr('champs obligatoire *') ?> </span>
         </div>
         <div class="submit-button">
-            <a class="button bg-blue-left"><?php _tr('envoyer') ?> </a>
+            <a href="#" class="button bg-blue-left"><?php _tr('envoyer') ?> </a>
         </div>
     </div>
 

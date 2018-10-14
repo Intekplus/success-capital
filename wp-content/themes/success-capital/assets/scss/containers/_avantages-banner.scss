@@ -1,0 +1,92 @@
+.avantages-banner-wrapper {
+  .avantages-banner {
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+    .boxes-wrapper {
+      display: flex;
+      flex-direction: column;
+      .box {
+        margin: 10px 0;
+        width: 100%;
+        flex: 100%;
+        box-shadow: 0 2px 5px 1px $gray-shadow;
+        padding: 25px;
+        background-color: $white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        img {
+          width: 100px;
+          height: 100px;
+          margin: auto;
+          padding-bottom: 20px;
+        }
+        .text {
+          text-align: center;
+          font-size: 24px;
+          color: $black;
+          padding:20px;
+        }
+      }
+    }
+    .title {
+      text-align: center;
+      padding: 75px 20px 100px 20px;
+      h2 {
+        font-family: $Playfair;
+        font-size: 36px;
+        color: $black;
+        font-weight: 100;
+      }
+    }
+    .text {
+      h2 {
+        font-size: 28px;
+        color: $black;
+        font-weight: 100;
+        font-family: $Playfair;
+      }
+      h3 {
+        color: $blue;
+        font-size: 24px;
+        font-weight: 100;
+        padding-bottom: 10px;
+      }
+      p {
+        font-size: 14px;
+        color: $black;
+      }
+    }
+    .button-wrapper {
+      display: flex;
+      justify-content: center;
+      padding: 68px 0;
+    }
+  }
+  @media #{$desktop-up} {
+    .avantages-banner {
+      .boxes-wrapper {
+        flex-direction: row;
+        .box {
+          flex: 33%;
+          width: 33%;
+          margin-right: 10px;
+          margin-left: 10px;
+          .text {
+            padding: 0 20% 20px 20%;
+          }
+          &:first-child {
+            margin-left: 0;
+          }
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+      .title {
+        padding: 100px 20% 100px 20%;
+      }
+    }
+  }
+}
