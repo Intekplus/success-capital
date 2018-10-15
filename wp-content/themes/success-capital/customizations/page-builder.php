@@ -49,6 +49,27 @@ function get_page_build(){
         case 'map_banner':
         include( locate_template("./views/containers/map-banner.php"));
         break;
+        case 'products_banner':
+        include( locate_template("./views/containers/products-banner.php"));
+        break;
+        case 'image_banner':
+        include( locate_template("./views/containers/image-banner.php"));
+        break;
+        case 'two-boxes-banner':
+        include( locate_template("./views/containers/two-boxes-banner.php"));
+        break;
+        case 'three-boxes-banner':
+        include( locate_template("./views/containers/three-boxes-banner.php"));
+        break;
+        case 'avantages-banner':
+        include( locate_template("./views/containers/avantages-banner.php"));
+        break;
+        case 'flat-partners':
+        include( locate_template("./views/containers/flat-partners.php"));
+        break;
+        case 'heart-stroke-banner':
+        include( locate_template("./views/containers/heart-stroke-banner.php"));
+        break;
       }
     }
   }

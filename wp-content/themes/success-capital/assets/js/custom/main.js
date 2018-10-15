@@ -18,7 +18,7 @@ $(function() {
   /**
    * Carousel
    */
-  $('.partner-carousel').owlCarousel({
+  $(".partner-banner-wrapper .partner-carousel").owlCarousel({
     loop: true,
     margin: 10,
     nav: true,
@@ -33,6 +33,33 @@ $(function() {
         items: 3,
       },
     },
+  });
+  $(".flat-partners-wrapper .partner-carousel").owlCarousel({
+    loop: true,
+    margin: 10,
+    nav: true,
+    items: 2,
+    navText: [
+      "<div class='arrow'><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22.129 11.561'><defs><style>.cls-1 {fill: #333;}</style></defs><path id='Tracé_10' data-name='Tracé 10' class='cls-1' d='M1.722,0,.671,1.051,4.65,5.03H-14.626v1.5H4.65L.671,10.51l1.051,1.051L7.5,5.78Z' transform='translate(14.627)'/></svg></div>",
+      "<div class='arrow'><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22.129 11.561'><defs><style>.cls-1 {fill: #333;}</style></defs><path id='Tracé_10' data-name='Tracé 10' class='cls-1' d='M1.722,0,.671,1.051,4.65,5.03H-14.626v1.5H4.65L.671,10.51l1.051,1.051L7.5,5.78Z' transform='translate(14.627)'/></svg></div>"
+    ],
+    dots: false,
+    responsive: {
+      600: {
+        items: 4,
+        navText: [
+          "<div class='arrow'><i class='fas fa-angle-right'></i></div>",
+          "<div class='arrow'><i class='fas fa-angle-right'></i></div>"
+        ]
+      },
+      1200: {
+        items: 6,
+        navText: [
+          "<div class='arrow'><i class='fas fa-angle-right'></i></div>",
+          "<div class='arrow'><i class='fas fa-angle-right'></i></div>"
+        ]
+      }
+    }
   });
 
   $('.quotes-carousel').owlCarousel({
@@ -236,7 +263,7 @@ $(function() {
     if ($marker.html()) {
       // create info window
       var infowindow = new google.maps.InfoWindow({
-        content: $marker.attr('address'),
+        content: $marker.html()
       });
       // show info window when marker is clicked
       google.maps.event.addListener(marker, 'click', function() {
