@@ -162,7 +162,7 @@ $(function () {
     var formData = 'action=ajax_filtered_properties&' + $(this).serialize();
 
     $.ajax({
-      url: ajaxurl,
+      url: WPURLS.ajaxurl,
       data: formData,
       method: 'POST',
       success: function success(data) {
