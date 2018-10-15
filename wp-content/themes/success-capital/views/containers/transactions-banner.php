@@ -1,12 +1,13 @@
 <?php
 $query = new WP_Query(array(
-  // 'category_name' => $cats,
   'posts_per_page' => 10,
   'post_type' => 'property'
 ));
+
+$is_transactions = true;
 ?>
 
-<div class="transactions-container">
+<div class="transactions-program-container">
   <div class="container--main">
     <div class="top">
       <div class="info">
@@ -20,29 +21,6 @@ $query = new WP_Query(array(
         <?= __tr('Nos coups de cœur') ?>
       </div>
     </div>
-    <div class="transactions-carousel owl-theme owl-carousel">
-      <?php if ($query->have_posts()) {
-        while ($query->have_posts()) {
-          $query->the_post();
-          $image = sizeOf(get_field('images')) ? get_field('images')[0]['image'] : '';
-          $term = sizeOf(get_the_terms(get_the_ID(), 'location')) ? get_the_terms(get_the_ID(), 'location')[0]->name : '';
-          ?>
-          <a href="<?= get_the_permalink() ?>">
-            <div class="transaction" style="background-image: url(<?= $image ?>)">
-              <div class="lower">
-                <div class="price">
-                  <?= number_format(get_field('price'), 0, ',', ' ') . ' €' ?>
-                </div>
-                <div class="region">
-                  <?= $term ?>
-                </div>
-              </div>
-            </div>
-          </a>
-          <?php 
-        } ?>
-      <?php 
-    } ?>
-    </div>
+    <?php include(locate_template('./views/components/program-transactions-carousel.php')) ?>
   </div>
 </div>

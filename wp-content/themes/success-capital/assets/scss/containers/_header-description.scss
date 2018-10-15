@@ -43,6 +43,43 @@
     font-weight: normal;
   }
 
+  .description-program {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+      margin-bottom: 15px;
+      color: $dark-blue;
+      font-weight: bold;
+    }
+
+    strong {
+      color: $dark-blue;
+    }
+
+    p {
+      margin-bottom: 15px;
+    }
+
+    ul {
+      li {
+        margin-bottom: 15px;
+      }
+      li::before {
+        content: '\2022';
+        color: $light-blue;
+        font-weight: bold;
+        display: inline-block;
+        width: 10px;
+        line-height: 22px;
+        font-size: 36px;
+        vertical-align: text-bottom;
+        padding-right: 10px;
+        margin-left: -20px;
+      }
+    }
+  }
   .description {
     font-size: 14px;
     line-height: 1.8;

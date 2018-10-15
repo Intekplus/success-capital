@@ -26,7 +26,7 @@
           </li>
           <li>
           <img src="<?php echo get_site_url(); ?>/wp-content/themes/success-capital/assets/img/images/dimensions.svg">
-            <?php echo $data['area'] ?>m2
+            <?php echo $data['area'] ?>
           </li>
         </ul>
       </div>
