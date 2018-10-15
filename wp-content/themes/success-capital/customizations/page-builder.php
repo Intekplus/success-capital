@@ -64,6 +64,12 @@ function get_page_build(){
         case 'avantages-banner':
         include( locate_template("./views/containers/avantages-banner.php"));
         break;
+        case 'flat-partners':
+        include( locate_template("./views/containers/flat-partners.php"));
+        break;
+        case 'heart-stroke-banner':
+        include( locate_template("./views/containers/heart-stroke-banner.php"));
+        break;
       }
     }
   }

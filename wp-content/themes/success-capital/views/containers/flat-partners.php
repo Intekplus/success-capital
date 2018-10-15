@@ -1,5 +1,5 @@
 <div class="flat-partners-wrapper" >  
-    <div class="carousel-container">
+    <div class="carousel-container container--main">
         <div class="carousel-title"><?php the_sub_field('title') ?></div>
         <div class="partner-carousel owl-theme">
             <?php

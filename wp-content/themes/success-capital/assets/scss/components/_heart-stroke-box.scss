@@ -1,0 +1,60 @@
+.stroke-wrapper{
+    margin: 25px 0;
+    .stroke-content{
+        background-color: white;
+        position:relative;
+        width: 100%;
+        margin: auto;
+        box-shadow: 0 2px 5px 1px $gray-shadow;
+        padding: 20px;
+        margin-top: -100px;
+        h3{
+            text-transform: uppercase;
+            color: $light-blue;
+        }
+        .stroke-link{
+            transition: all 0.3s ease-in-out;
+            .button{
+                text-align: right;
+                svg{
+                    height: 10px;
+                    path{
+                        transition: all 0.3s ease-in-out;
+                    }
+                }
+            }
+            &:hover{
+                color: $blue;
+                .button{
+                    svg{
+                        path{
+                            fill: $blue;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .image{
+        margin: 0 -35px;
+        transition: all 0.3s ease-in-out;
+        &:hover{
+            filter: brightness(0.7);
+        }
+        img{
+            width: 100%;
+            height: auto;
+            box-shadow: 0 2px 5px 1px $gray-shadow;
+        }
+    }
+    @media #{$large-tablet-up}{
+        .stroke-content{
+            width: 70%;
+            margin: -100px 0 0 auto;
+        }
+        .image{
+            padding-right: 40px;
+            margin: unset;
+        }
+    }
+}
