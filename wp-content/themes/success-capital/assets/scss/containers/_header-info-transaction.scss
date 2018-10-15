@@ -7,6 +7,33 @@
     padding-bottom: 25px;
     background: $subtle-blue;
 
+    &.program {
+      p {
+        margin-bottom: 15px;
+        a {
+          font-size: 12px;
+          color: $black;
+          &:hover {
+            color: $blue;
+            svg path {
+              color: $blue;
+            }
+          }
+          svg {
+            path {
+              fill: currentColor;
+            }
+            height: 21.8px;
+            width: 19.8px;
+            padding-right: 30px;
+          }
+          span {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+
     h2 {
       font-family: $Playfair;
       color: $blue;

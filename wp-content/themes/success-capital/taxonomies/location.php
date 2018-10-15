@@ -33,7 +33,7 @@ function property_location_taxonomy() {
 		'show_tagcloud'              => true,
 		'show_in_rest'               => true,
 	);
-	register_taxonomy( 'location', array( 'property' ), $args );
+	register_taxonomy( 'location', array( 'property', 'programme' ), $args );
 
 }
 add_action( 'init', 'property_location_taxonomy', 0 );

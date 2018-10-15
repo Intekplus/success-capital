@@ -34,14 +34,21 @@
         <?php if (isset($data["area"])) { ?>
           <li>
           <img src="<?php echo get_site_url(); ?>/wp-content/themes/success-capital/assets/img/images/dimensions.svg">
-            <?= $data["area"] . ' m2' ?>
+            <?= $data["area"] ?>
           </li>
         <?php 
       } ?>
       </ul>
     </div>
     <div class="cta-price">
-      <p><?= $data["price"] . ' €' ?></p>
+      
+      <?php
+      if (isset($data["from"])) {
+        echo '<p>' . __tr('À partir de '). $data["price"] . ' €' . '</p>';
+      } else {
+        echo '<p>' . $data["price"] . ' €' . '</p>';
+      }
+      ?>
       <button data-modal="#modal" class="modal__trigger">
           <?php
           if (isset($data["is_transaction"])) {

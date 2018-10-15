@@ -69,7 +69,7 @@ $(function () {
     autoWidth: true
   });
 
-  $(".transactions-carousel").owlCarousel({
+  $(".transactions-program-carousel").owlCarousel({
     loop: false,
     margin: 10,
     nav: false,

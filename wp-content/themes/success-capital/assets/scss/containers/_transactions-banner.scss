@@ -1,5 +1,7 @@
-.transactions-container {
-  background-color: $lighter-blue;
+.transactions-program-container {
+  &:not(.no-bg) {
+    background-color: $lighter-blue;
+  }
   padding-top: 50px;
   .top {
     display: flex;
@@ -7,6 +9,7 @@
     h2 {
       font-size: 36px;
       font-family: $Playfair;
+      font-weight: normal;
     }
     .info {
       flex: 1;
@@ -24,7 +27,7 @@
       margin-top: 50px;
     }
   }
-  .transactions-carousel {
+  .transactions-program-carousel {
     margin-top: 50px;
     margin-bottom: 50px;
     .owl-stage-outer {
@@ -33,7 +36,7 @@
         align-items: center;
         height: 100%;
         flex-wrap: wrap;
-        .transaction {
+        .transaction-program {
           width: 320px;
           position: relative;
           background-position: center;
@@ -68,22 +71,19 @@
 }
 
 @media #{$large-tablet-up} {
-  .transactions-container {
+  .transactions-program-container {
     .top {
       flex-direction: row;
       .info {
-        h2 {
-          max-width: 350px;
-        }
         p {
           max-width: 350px;
         }
       }
     }
-    .transactions-carousel {
+    .transactions-program-carousel {
       .owl-stage-outer {
         .owl-stage {
-          .transaction {
+          .transaction-program {
             width: 530px;
           }
         }

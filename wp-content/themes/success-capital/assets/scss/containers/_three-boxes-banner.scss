@@ -1,73 +1,78 @@
-.three-boxes-banner-wrapper{
-    .three-boxes-banner{
-        .boxes-wrapper{
-            display: flex;
-            margin-top: -50px;
-            flex-direction: column;
-            .box{
-                margin: 10px 0;
-                width: 100%;
-                flex: 100%;
-                box-shadow: 0 2px 5px 1px $gray-shadow;
-                padding: 25px;
-                background-color: $white;
-                display: flex;
-                align-items: center;
-                img{
-                    width: 50px;
-                    height: 50px;
-                    margin-right: 20px
-                }
-            }
+.three-boxes-banner-wrapper {
+  .three-boxes-banner {
+    .boxes-wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin-top: -50px;
+      .box {
+        margin: 10px 0;
+        max-width: 350px;
+        width: 100%;
+        flex: 100%;
+        box-shadow: 0 2px 5px 1px $gray-shadow;
+        padding: 25px;
+        background-color: $white;
+        display: flex;
+        align-items: center;
+        img {
+          width: 50px;
+          height: 50px;
+          margin-right: 20px;
         }
-        .title{
-            text-align:center;
-            background-color: rgba(114, 155, 208, 0.1);
-            padding: 75px 20px 100px 20px;
-        }
-        .text{
-            h2{
-                font-size: 28px;
-                color: $black;
-                font-weight: 100;
-                font-family: $Playfair;
-            }
-            h3{
-                color: $blue;
-                font-size: 24px;
-                font-weight: 100;
-                padding-bottom: 10px;
-            }
-            p{
-                font-size: 14px;
-                color: $black;
-            }
-            em{
-                color: $blue;
-                font-style: normal;
-            }
-        }
+      }
     }
-    @media #{$desktop-up}{
-        .three-boxes-banner{
-            .boxes-wrapper{
-                flex-direction: row;
-                .box{
-                    flex: 33%;
-                    width: 33%;
-                    margin-right: 10px;
-                    margin-left: 10px;
-                    &:first-child{
-                        margin-left: 0;
-                    }
-                    &:last-child{
-                        margin-right: 0;
-                    }
-                }
-            }
-            .title{
-                padding: 100px 20% 100px 20%;
-            }
-        }
+    .title {
+      text-align: center;
+      background-color: rgba(114, 155, 208, 0.1);
+      padding: 75px 20px 100px 20px;
     }
+    .text {
+      h2 {
+        font-size: 36px;
+        margin-bottom: 10px;
+        color: $black;
+        font-weight: 100;
+        font-family: $Playfair;
+      }
+      h3 {
+        color: $blue;
+        font-size: 24px;
+        font-weight: 100;
+        padding-bottom: 10px;
+      }
+      p {
+        font-size: 14px;
+        color: $black;
+        max-width: 450px;
+        margin: auto;
+      }
+      em {
+        color: $blue;
+        font-style: normal;
+      }
+    }
+  }
+  @media #{$desktop-up} {
+    .three-boxes-banner {
+      .boxes-wrapper {
+        flex-direction: row;
+        .box {
+          flex: 33%;
+          width: 33%;
+          margin-right: 10px;
+          margin-left: 10px;
+          &:first-child {
+            margin-left: 0;
+          }
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+      .title {
+        padding: 100px 20% 100px 20%;
+      }
+    }
+  }
 }
