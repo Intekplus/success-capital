@@ -9,15 +9,16 @@ License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
-@import 'common/mixins';
-@import 'common/reset';
-@import 'common/variables';
-@import 'common/typography';
-@import 'common/utility';
-@import 'common/breakpoints';
-@import 'common/layout';
-@import 'common/global';
-@import 'components/*';
-@import 'components/newsfeed/*';
-@import 'layouts/*';
-@import 'containers/*';
+@import "common/mixins";
+@import "common/reset";
+@import "common/variables";
+@import "common/typography";
+@import "common/utility";
+@import "common/breakpoints";
+@import "common/layout";
+@import "common/global";
+@import "components/*";
+@import "components/newsfeed/*";
+@import "layouts/*";
+@import "containers/*";
+@import "vendor/*";
