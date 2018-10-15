@@ -1,0 +1,45 @@
+.header-info-transaction {
+  padding-top: 30px;
+
+  .header-specs {
+    @extend .container--main;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    background: $subtle-blue;
+
+    h2 {
+      font-family: $Playfair;
+      color: $blue;
+      font-weight: bold;
+      margin-bottom: 20px;
+      font-size: 28px;
+    }
+
+    h3 {
+      color: $light-blue;
+      font-size: 12px;
+      margin-bottom: 5px;
+      text-transform: uppercase;
+    }
+
+    p {
+      color: $black;
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+@media #{$large-tablet-up} {
+  .header-info-transaction {
+    display: flex;
+    padding-top: 0px;
+
+    .header-specs {
+      width: 40%;
+      padding-left: 30px !important;
+      margin: 0 !important;
+      padding-top: 75px;
+    }
+  }
+}

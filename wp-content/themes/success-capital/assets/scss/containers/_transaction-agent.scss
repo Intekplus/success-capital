@@ -1,0 +1,73 @@
+.transaction-agent {
+  margin-bottom: 50px;
+  .map {
+    box-shadow: 0 3px 6px #0000002e;
+  }
+  .transaction-agent-wrapper {
+    @extend .container--main;
+    .transaction-agent-card {
+      margin: 30px auto;
+      width: auto;
+      max-width: 300px;
+      min-width: 300px;
+      box-shadow: 0 3px 6px #0000002e;
+
+      .button {
+        display: block;
+        text-align: center;
+      }
+
+      h1 {
+        font-family: $Playfair;
+        font-size: 36px;
+        color: $blue;
+        margin-bottom: 25px;
+        font-weight: normal;
+        text-align: center;
+      }
+
+      h2 {
+        font-size: 24px;
+        margin-bottom: 10px;
+        text-align: center;
+        margin-top: 10px;
+      }
+
+      .employee-content {
+        .employee-desc {
+          padding: 0;
+          margin-bottom: 30px;
+        }
+
+        .pic {
+          width: 100px;
+          height: 100px;
+          object-fit: cover;
+          margin-bottom: 15px;
+        }
+      }
+    }
+  }
+}
+
+@media #{$large-tablet-up} {
+  .transaction-agent {
+    display: flex;
+    margin-top: 50px;
+    padding-left: 0 !important;
+
+    .transaction-agent-wrapper {
+      padding-left: 0 !important;
+
+      .transaction-agent-card {
+        margin: 0;
+      }
+    }
+
+    .map {
+      width: 70%;
+      order: -1;
+      margin-right: 15px;
+    }
+  }
+}

@@ -10,8 +10,6 @@
   "dependencies": {
     "gulp-include": "^2.3.1",
     "gulp-util": "^3.0.8",
-    "instafeed.js": "^1.4.1",
-    "masonry-layout": "^4.2.2",
     "stream-combiner": "^0.2.2"
   },
   "devDependencies": {

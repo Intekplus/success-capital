@@ -1,5 +1,5 @@
 .banner {
-  z-index: 10000;
+  z-index: 9999;
   position: relative;
   @media #{$desktop-lower} {
     .menu-container {

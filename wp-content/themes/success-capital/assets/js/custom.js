@@ -1,27 +1,27 @@
 "use strict";
 
 $(function () {});
-"use strict";
+'use strict';
 
 $(function () {
   /**
    * Menu
    */
-  $(".menu-burger").click(function (e) {
+  $('.menu-burger').click(function (e) {
     e.stopPropagation();
-    var container = $(".menu-container");
-    container.toggleClass("active");
-    $(".menu-item-has-children").removeClass("active");
-    $("body").toggleClass("noScrolling");
+    var container = $('.menu-container');
+    container.toggleClass('active');
+    $('.menu-item-has-children').removeClass('active');
+    $('body').toggleClass('noScrolling');
   });
-  $(".menu-item-has-children > a").click(function (e) {
+  $('.menu-item-has-children > a').click(function (e) {
     e.preventDefault();
-    $(this).parent(".menu-item-has-children").toggleClass("active");
+    $(this).parent('.menu-item-has-children').toggleClass('active');
   });
   /**
    * Carousel
    */
-  $(".partner-carousel").owlCarousel({
+  $('.partner-carousel').owlCarousel({
     loop: true,
     margin: 10,
     nav: true,
@@ -34,14 +34,14 @@ $(function () {
       }
     }
   });
-  $(".quotes-carousel").owlCarousel({
+  $('.quotes-carousel').owlCarousel({
     loop: true,
     margin: 10,
     nav: false,
     items: 1,
     dots: true
   });
-  $(".global-carousel").owlCarousel({
+  $('.global-carousel').owlCarousel({
     loop: true,
 
     nav: true,
@@ -64,45 +64,73 @@ $(function () {
     },
     dots: false
   });
+
+  $('.image-preview-carousel').owlCarousel({
+    loop: false,
+    margin: 20,
+    nav: false,
+    dots: false,
+    autoWidth: true
+  });
+
+  $('.discover-carousel').owlCarousel({
+    loop: false,
+    margin: 20,
+    nav: false,
+    dots: false,
+    autoWidth: true
+  });
+
+  /**
+   * Image preview
+   */
+
+  $('.image-preview-item').click(function (e) {
+    e.preventDefault();
+    $('.image-preview-item').removeClass('active');
+    $(this).addClass('active');
+    var nextImage = $(this).attr('src');
+    $('.image-section').css('background-image', 'url(' + nextImage + ')');
+  });
+
   /**
    * Accordion
    */
-  $(".accordion-wrapper .title").click(function (e) {
+  $('.accordion-wrapper .title').click(function (e) {
     e.preventDefault();
-    $(this).parent(".accordion-wrapper").toggleClass("active");
+    $(this).parent('.accordion-wrapper').toggleClass('active');
   });
 
   /**
    * Dropdown
    */
-  $(".dropdown-label").click(function (e) {
-    $(".dropdown-content").not($(this).next()).slideUp();
-    $(".dropdown-content").parent().removeClass('active');
+  $('.dropdown-label').click(function (e) {
+    $('.dropdown-content').not($(this).next()).slideUp();
+    $('.dropdown-content').parent().removeClass('active');
     $(this).next().slideToggle().parent().addClass('active');
   });
 
   // Click away listener
-  $(document).on("click", function (event) {
-    console.log(event.target.className);
-    if (event.target.className !== "dropdown-content" && event.target.className !== "dropdown-label" && event.target.className !== "dropdown-item" && event.target.className !== "dropdown-wrapper") {
-      $(".dropdown-content").slideUp();
-      $(".dropdown-content").parent().removeClass('active');
+  $(document).on('click', function (event) {
+    if (event.target.className !== 'dropdown-content' && event.target.className !== 'dropdown-label' && event.target.className !== 'dropdown-item' && event.target.className !== 'dropdown-wrapper') {
+      $('.dropdown-content').slideUp();
+      $('.dropdown-content').parent().removeClass('active');
     }
   });
 
   /**
    * Transaction filters
    */
-  $(".properties_filters").submit(function (e) {
+  $('.properties_filters').submit(function (e) {
     e.preventDefault();
-    var formData = "action=ajax_filtered_properties&" + $(this).serialize();
+    var formData = 'action=ajax_filtered_properties&' + $(this).serialize();
 
     $.ajax({
       url: ajaxurl,
       data: formData,
-      method: "POST",
+      method: 'POST',
       success: function success(data) {
-        $(".transactions--ajax").html(data);
+        $('.transactions--ajax').html(data);
       },
       error: function error(err) {
         console.log(err); // TODO: Error handling
@@ -111,7 +139,6 @@ $(function () {
   });
 
   $('.dropdown-item input').click(function (e) {
-    console.log($(this).attr('value'));
     $(this).parents('.dropdown-wrapper').addClass('selection');
     $(this).parents('.dropdown-wrapper').find('.dropdown-label').text($(this).attr('value'));
   });
@@ -119,17 +146,6 @@ $(function () {
     e.preventDefault();
     $(this).parents('.properties_filters').submit();
   });
-  /**
-   * Transaction carousel TODO
-   */
-
-  // $(".transaction-carousel").owlCarousel({
-  //   loop: true,
-  //   margin: 0,
-  //   nav: true,
-  //   items: 1,
-  //   dots: false
-  // });
 
   /**
    * Google maps banner
@@ -155,12 +171,8 @@ $(function () {
     }
   }
   function add_marker($marker, map) {
-    // var
-    console.log($marker);
-    var protocol = window.location.protocol;
-    var host = window.location.hostname;
     var latlng = new google.maps.LatLng($marker.attr('data-lat'), $marker.attr('data-lng'));
-    console.log($marker.attr('data-lat'));
+
     var iconUrl = '/wp-content/themes/success-capital/assets/img/images/map-icon.svg';
 
     var icon = {
@@ -193,7 +205,63 @@ $(function () {
   function new_map($el) {
     // var
     geocoder = new google.maps.Geocoder();
-    var styledMap = [{ "elementType": "geometry", "stylers": [{ "color": "#f5f5f5" }] }, { "elementType": "labels.icon", "stylers": [{ "visibility": "off" }] }, { "elementType": "labels.text.fill", "stylers": [{ "color": "#616161" }] }, { "elementType": "labels.text.stroke", "stylers": [{ "color": "#f5f5f5" }] }, { "featureType": "administrative.land_parcel", "elementType": "labels.text.fill", "stylers": [{ "color": "#bdbdbd" }] }, { "featureType": "poi", "elementType": "geometry", "stylers": [{ "color": "#eeeeee" }] }, { "featureType": "poi", "elementType": "labels.text.fill", "stylers": [{ "color": "#757575" }] }, { "featureType": "poi.park", "elementType": "geometry", "stylers": [{ "color": "#e5e5e5" }] }, { "featureType": "poi.park", "elementType": "labels.text.fill", "stylers": [{ "color": "#9e9e9e" }] }, { "featureType": "road", "elementType": "geometry", "stylers": [{ "color": "#ffffff" }] }, { "featureType": "road.arterial", "elementType": "labels.text.fill", "stylers": [{ "color": "#757575" }] }, { "featureType": "road.highway", "elementType": "geometry", "stylers": [{ "color": "#dadada" }] }, { "featureType": "road.highway", "elementType": "labels.text.fill", "stylers": [{ "color": "#616161" }] }, { "featureType": "road.local", "elementType": "labels.text.fill", "stylers": [{ "color": "#9e9e9e" }] }, { "featureType": "transit.line", "elementType": "geometry", "stylers": [{ "color": "#e5e5e5" }] }, { "featureType": "transit.station", "elementType": "geometry", "stylers": [{ "color": "#eeeeee" }] }, { "featureType": "water", "elementType": "geometry", "stylers": [{ "color": "#c9c9c9" }] }, { "featureType": "water", "elementType": "labels.text.fill", "stylers": [{ "color": "#9e9e9e" }] }];
+    var styledMap = [{ elementType: 'geometry', stylers: [{ color: '#f5f5f5' }] }, { elementType: 'labels.icon', stylers: [{ visibility: 'off' }] }, { elementType: 'labels.text.fill', stylers: [{ color: '#616161' }] }, { elementType: 'labels.text.stroke', stylers: [{ color: '#f5f5f5' }] }, {
+      featureType: 'administrative.land_parcel',
+      elementType: 'labels.text.fill',
+      stylers: [{ color: '#bdbdbd' }]
+    }, {
+      featureType: 'poi',
+      elementType: 'geometry',
+      stylers: [{ color: '#eeeeee' }]
+    }, {
+      featureType: 'poi',
+      elementType: 'labels.text.fill',
+      stylers: [{ color: '#757575' }]
+    }, {
+      featureType: 'poi.park',
+      elementType: 'geometry',
+      stylers: [{ color: '#e5e5e5' }]
+    }, {
+      featureType: 'poi.park',
+      elementType: 'labels.text.fill',
+      stylers: [{ color: '#9e9e9e' }]
+    }, {
+      featureType: 'road',
+      elementType: 'geometry',
+      stylers: [{ color: '#ffffff' }]
+    }, {
+      featureType: 'road.arterial',
+      elementType: 'labels.text.fill',
+      stylers: [{ color: '#757575' }]
+    }, {
+      featureType: 'road.highway',
+      elementType: 'geometry',
+      stylers: [{ color: '#dadada' }]
+    }, {
+      featureType: 'road.highway',
+      elementType: 'labels.text.fill',
+      stylers: [{ color: '#616161' }]
+    }, {
+      featureType: 'road.local',
+      elementType: 'labels.text.fill',
+      stylers: [{ color: '#9e9e9e' }]
+    }, {
+      featureType: 'transit.line',
+      elementType: 'geometry',
+      stylers: [{ color: '#e5e5e5' }]
+    }, {
+      featureType: 'transit.station',
+      elementType: 'geometry',
+      stylers: [{ color: '#eeeeee' }]
+    }, {
+      featureType: 'water',
+      elementType: 'geometry',
+      stylers: [{ color: '#c9c9c9' }]
+    }, {
+      featureType: 'water',
+      elementType: 'labels.text.fill',
+      stylers: [{ color: '#9e9e9e' }]
+    }];
     var styledMapType = new google.maps.StyledMapType(styledMap);
     // vars
     var args = {
@@ -204,7 +272,7 @@ $(function () {
         mapTypeIds: ['roadmap', 'satellite', 'hybrid', 'terrain', 'styled_map']
       }
     };
-    // create map	        	
+    // create map
     var map = new google.maps.Map($el[0], args);
 
     map.mapTypes.set('styled_map', styledMapType);
@@ -219,4 +287,176 @@ $(function () {
     add_marker($($marker[0]), map);
     center_map(map);
   });
+});
+'use strict';
+
+var Modal = function ($) {
+  var trigger;
+  var modals;
+  var modalsbg;
+  var content;
+  var closers;
+  var len;
+  var w = window;
+  var isOpen = false;
+  var contentDelay = 200; // duration after you click the button and wait for the content to show
+
+  var getId = function getId(event) {
+    event.preventDefault();
+    var self = this;
+    // get the value of the data-modal attribute from the button
+    var modalId = self.dataset.modal;
+    var len = modalId.length;
+    // remove the '#' from the string
+    var modalIdTrimmed = modalId.substring(1, len);
+    // select the modal we want to activate
+    var modal = document.getElementById(modalIdTrimmed);
+    // execute function that creates the temporary expanding div
+    makeDiv(self, modal);
+  };
+
+  var makeDiv = function makeDiv(self, modal) {
+    var fakediv = document.getElementById('modal__temp');
+
+    /**
+     * if there isn't a 'fakediv', create one and append it to the button that was
+     * clicked. after that execute the function 'moveTrig' which handles the animations.
+     */
+
+    if (fakediv === null) {
+      var div = document.createElement('div');
+      div.id = 'modal__temp';
+      self.appendChild(div);
+      moveTrig(self, modal, div);
+    }
+  };
+
+  var moveTrig = function moveTrig(trig, modal, div) {
+    var trigProps = trig.getBoundingClientRect();
+    var m = modal;
+    var mProps = m.querySelector('.modal__content').getBoundingClientRect();
+    var transX, transY, scaleX, scaleY;
+    var xc = w.innerWidth / 2;
+    var yc = w.innerHeight / 2;
+
+    // this class increases z-index value so the button goes overtop the other buttons
+    trig.classList.add('modal__trigger--active');
+
+    // these values are used to move the button to the center of the window
+    transX = Math.round(xc - trigProps.left - trigProps.width / 2);
+    transY = Math.round(yc - trigProps.top - trigProps.height / 2);
+
+    // if the modal is aligned to the top then move the button to the center-y of the modal instead of the window
+    if (m.classList.contains('modal--align-top')) {
+      transY = Math.round(mProps.height / 2 + mProps.top - trigProps.top - trigProps.height / 2);
+    }
+
+    // translate button to center of screen
+    trig.style.transform = 'translate(' + transX + 'px, ' + transY + 'px)';
+    trig.style.webkitTransform = 'translate(' + transX + 'px, ' + transY + 'px)';
+
+    window.setTimeout(function () {
+      window.requestAnimationFrame(function () {
+        open(m, div);
+      });
+    }, contentDelay);
+  };
+
+  var open = function open(m, div) {
+    if (!isOpen) {
+      // select the content inside the modal
+      var content = m.querySelector('.modal__content');
+      // reveal the modal
+      m.classList.add('modal--active');
+      // reveal the modal content
+      content.classList.add('modal__content--active');
+
+      /**
+       * when the modal content is finished transitioning, fadeout the temporary
+       * expanding div so when the window resizes it isn't visible ( it doesn't
+       * move with the window).
+       */
+
+      content.addEventListener('transitionend', hideDiv, false);
+
+      isOpen = true;
+    }
+
+    function hideDiv() {
+      // fadeout div so that it can't be seen when the window is resized
+      div.style.opacity = '0';
+      content.removeEventListener('transitionend', hideDiv, false);
+    }
+  };
+
+  var close = function close(event) {
+    event.preventDefault();
+    event.stopImmediatePropagation();
+
+    var target = event.target;
+    var div = document.getElementById('modal__temp');
+
+    /**
+     * make sure the modal__bg or modal__close was clicked, we don't want to be able to click
+     * inside the modal and have it close.
+     */
+
+    if (isOpen && target.classList.contains('modal__bg') || target.classList.contains('modal__close')) {
+      // make the hidden div visible again and remove the transforms so it scales back to its original size
+      div.style.opacity = '1';
+      div.removeAttribute('style');
+
+      /**
+       * iterate through the modals and modal contents and triggers to remove their active classes.
+       * remove the inline css from the trigger to move it back into its original position.
+       */
+      $('.modal__trigger').removeClass('modal__trigger--active');
+
+      $('.modal__trigger').css({
+        transform: 'none',
+        webkitTransform: 'none'
+      });
+
+      modals.removeClass('modal--active');
+      content.removeClass('modal__content--active');
+
+      // when the temporary div is opacity:1 again, we want to remove it from the dom
+      div.addEventListener('transitionend', removeDiv, false);
+
+      isOpen = false;
+    }
+
+    function removeDiv() {
+      setTimeout(function () {
+        window.requestAnimationFrame(function () {
+          // remove the temp div from the dom with a slight delay so the animation looks good
+          div.remove();
+        });
+      }, contentDelay - 50);
+    }
+  };
+
+  var bindActions = function bindActions() {
+    trigger.on('click', getId);
+    closers.on('click', close);
+    modalsbg.on('click', close);
+  };
+
+  var init = function init() {
+    trigger = $('.modal__trigger'); // what you click to activate the modal
+    modals = $('.modal'); // the entire modal (takes up entire window)
+    modalsbg = $('.modal__bg'); // the entire modal (takes up entire window)
+    content = $('.modal__content'); // the inner content of the modal
+    closers = $('.modal__close'); // an element used to close the modal
+    len = trigger.length;
+    bindActions();
+  };
+
+  return {
+    init: init
+  };
+}(jQuery);
+
+$(function () {
+  Modal.init();
 });
