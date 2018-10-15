@@ -8,7 +8,7 @@ if (!defined('ABSPATH')) {
 get_header(); ?>
 
 	<div class="container-fluid">
-		<div class="container--main">
+		<div>
 			<?php get_page_build(); ?>
 	</div>
 </div>

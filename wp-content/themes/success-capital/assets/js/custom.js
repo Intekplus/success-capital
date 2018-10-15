@@ -52,7 +52,8 @@ $(function () {
       }
     }
   });
-  $(".quotes-carousel").owlCarousel({
+
+  $('.quotes-carousel').owlCarousel({
     loop: true,
     margin: 10,
     nav: false,
