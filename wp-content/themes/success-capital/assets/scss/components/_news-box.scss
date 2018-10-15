@@ -1,19 +1,15 @@
 .news-container {
   margin-top: 30px;
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   .news-box {
-    flex: 530px;
-    width: 530px;
-    min-width: 300px;
-    max-width: 50%;
+    flex: 1;
+    width: 100%;
     overflow: hidden;
     margin-bottom: 15px;
     box-shadow: 0 3px 6px #0000002e;
     border-radius: 6px;
-    &:nth-child(odd) {
-      margin-right: 20px;
-    }
 
     img {
       display: block;
@@ -23,7 +19,7 @@
     }
 
     .news-box-content {
-      padding: 20px 60px;
+      padding: 20px 30px;
       font-family: $Montserrat;
       color: $black;
       h3 {
@@ -50,6 +46,25 @@
             padding-right: 4px;
           }
         }
+      }
+    }
+  }
+}
+
+@media #{$large-tablet-up} {
+  .news-container {
+    flex-direction: row;
+    .news-box {
+      flex: 530px;
+      width: 530px;
+      max-width: calc(50% - 10px);
+      min-width: 300px;
+      &:nth-child(odd) {
+        margin-right: 20px;
+      }
+
+      .news-box-content {
+        padding: 20px 60px;
       }
     }
   }
