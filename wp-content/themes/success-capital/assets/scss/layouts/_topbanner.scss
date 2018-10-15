@@ -1,35 +1,35 @@
-.preparer-sa-retraite{
-    
-    background-size: cover;
-    background-position: 24%;
-    background-repeat: no-repeat;
-    .retraite-text{
-        text-align: center;
-        padding:100px 35px;
-        h2{
-            font-size: 32px;
-            padding-bottom:5px;
-        }
-        p{
-            font-size: 14px;
-            width: 80%;
-            text-align: center;
-            width: 100%;
-            line-height: 28px;
-        }
-    }  
-    @media #{$large-tablet-up}{
-    background-position: center;
-        .retraite-text{
-            padding:150px 35px;
-            h2{
-            font-size: 40px;
-            }
-            p{
-            font-size: 18px;
-            padding: 0 25%;
-            line-height: 28px;
-            }
-        }  
+.preparer-sa-retraite,
+.top-banner {
+  background-size: cover;
+  background-position: 24%;
+  background-repeat: no-repeat;
+  .retraite-text {
+    text-align: center;
+    padding: 100px 35px;
+    h2 {
+      font-size: 32px;
+      padding-bottom: 5px;
     }
+    p {
+      font-size: 14px;
+      width: 80%;
+      text-align: center;
+      width: 100%;
+      line-height: 28px;
+    }
+  }
+  @media #{$large-tablet-up} {
+    background-position: center;
+    .retraite-text {
+      padding: 150px 35px;
+      h2 {
+        font-size: 40px;
+      }
+      p {
+        font-size: 18px;
+        padding: 0 25%;
+        line-height: 28px;
+      }
+    }
+  }
 }

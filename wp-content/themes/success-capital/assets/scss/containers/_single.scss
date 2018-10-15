@@ -1,4 +1,46 @@
 .single {
+  .top-banner {
+    min-height: 300px;
+    .title,
+    .subtitle,
+    .shares {
+      // padding: 100px 35px;
+      max-width: 630px;
+      margin: auto;
+      text-align: center;
+      color: $black;
+    }
+    .date {
+      padding-top: 120px;
+      margin-bottom: 15px;
+      color: $light-blue;
+      font-weight: bold;
+      text-align: center;
+    }
+    .title {
+      font-weight: bold;
+      font-size: 40px;
+      margin-bottom: 20px;
+      font-family: $Playfair;
+    }
+    .subtitle {
+      font-size: 18px;
+      padding-bottom: 40px;
+    }
+    .shares {
+      font-size: 14px;
+      padding-bottom: 125px;
+      span {
+        padding-right: 15px;
+        border-right: 1px solid $light-grey;
+      }
+
+      i {
+        width: 35px;
+      }
+    }
+  }
+
   .content-box {
     font-size: 14px;
     color: $black;
