@@ -73,6 +73,9 @@ function get_page_build(){
         case 'transactions':
         include( locate_template("./views/containers/transactions-banner.php"));
         break;
+        case 'programs':
+        include( locate_template("./views/containers/program-banner.php"));
+        break;
       }
     }
   }

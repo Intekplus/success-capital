@@ -5,11 +5,17 @@ $query = new WP_Query(array(
 ));
 ?>
 
-<div class="transactions-program-container">
+<div class="transactions-program-container no-bg">
   <div class="container--main">
     <div class="top">
       <div class="info">
-        <h2>Découvrez également</h2>
+        <?php if (is_single()) { ?>
+        <h2><?= __tr('Découvrez également') ?></h2>
+        <?php 
+      } else { ?>
+        <h2><?= get_sub_field('title') ?></h2>
+      <?php 
+    } ?>
       </div>
     </div>
     <?php include(locate_template('./views/components/program-transactions-carousel.php')) ?>

@@ -1,5 +1,7 @@
 .transactions-program-container {
-  background-color: $lighter-blue;
+  &:not(.no-bg) {
+    background-color: $lighter-blue;
+  }
   padding-top: 50px;
   .top {
     display: flex;
