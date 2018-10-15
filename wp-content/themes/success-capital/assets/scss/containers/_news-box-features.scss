@@ -78,6 +78,18 @@
   }
 }
 
+#news-content {
+  .loader-container {
+    width: 100%;
+    height: 120px;
+    text-align: center;
+    img {
+      max-height: 100%;
+      padding: 20px 0;
+    }
+  }
+}
+
 @media #{$large-tablet-up} {
   .news-featured-container {
     flex-direction: row;

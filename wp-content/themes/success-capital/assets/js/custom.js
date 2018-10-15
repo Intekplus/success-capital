@@ -500,11 +500,11 @@ $(function () {
     });
 
     var category = filters.length ? '?category=' + filters.join() : '';
-    var link = 'http://localhost:3000/actualites/' + category;
+    var link = WPURLS.currenturl + '/' + category;
     var params = category ? category : location.pathname;
 
     window.history.replaceState('', '', '' + params);
-    $('#news-content').html('Loading...');
+    $('#news-content').html('<div class="loader-container"><img src="../wp-content/themes/success-capital/assets/img/images/loader.gif"></div>');
     $('#news-content').load(link + ' #news-content>*');
   });
 });
