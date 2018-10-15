@@ -6,9 +6,11 @@
     .boxes-wrapper {
       display: flex;
       flex-direction: column;
+      justify-content: space-between;
       .box {
         margin: 10px 0;
         width: 100%;
+        max-width: 350px;
         flex: 100%;
         box-shadow: 0 2px 5px 1px $gray-shadow;
         padding: 25px;
@@ -17,16 +19,16 @@
         flex-direction: column;
         justify-content: center;
         img {
-          width: 100px;
-          height: 100px;
+          max-width: 100px;
+          max-height: 100px;
           margin: auto;
           padding-bottom: 20px;
         }
         .text {
           text-align: center;
           font-size: 24px;
+          line-height: 28px;
           color: $black;
-          padding:20px;
         }
       }
     }
@@ -73,9 +75,6 @@
           width: 33%;
           margin-right: 10px;
           margin-left: 10px;
-          .text {
-            padding: 0 20% 20px 20%;
-          }
           &:first-child {
             margin-left: 0;
           }

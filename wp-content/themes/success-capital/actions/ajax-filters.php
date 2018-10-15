@@ -1,5 +1,3 @@
-<?php include( locate_template("./views/containers/transactions/list.php")); ?>
-
 <?php 
 function ajax_filtered_properties(){
     filtered_properties( $_POST["budget"], $_POST["location"], $_POST["room"]);
