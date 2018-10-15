@@ -1,0 +1,109 @@
+.news-featured-container {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column-reverse;
+  .news-box {
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 450px;
+    box-shadow: 0 3px 6px #0000002e;
+    border-radius: 6px;
+    overflow: hidden;
+    .info-container {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      color: #fff;
+      padding: 10px 30px 20px;
+      background-color: rgba(#000, 0.35);
+      .info {
+        flex: 100%;
+        width: 100%;
+        h3 {
+          font-size: 32px;
+          padding-top: 15px;
+          padding-bottom: 10px;
+        }
+        p {
+          font-size: 14px;
+          opacity: 0.8;
+        }
+      }
+      .read-more {
+        flex: 100%;
+        width: 100%;
+        text-align: right;
+        align-self: flex-end;
+        font-weight: bold;
+        .arrow {
+          font-size: 22px;
+          position: relative;
+          top: 2px;
+          padding-right: 4px;
+        }
+      }
+    }
+  }
+  .categories {
+    box-shadow: 0 3px 6px #0000002e;
+    border-radius: 6px;
+    h3 {
+      font-weight: bold;
+      font-size: 20px;
+      color: $black;
+      border-bottom: 1px solid $gray-shadow;
+      margin: 20px 15px 0;
+      padding: 0 15px 10px;
+    }
+    .checkbox-container {
+      margin: 25px 30px 40px;
+    }
+    .filter-news-wrapper {
+      text-align: center;
+      height: 50px;
+      border-bottom: 1px solid $gray-shadow;
+      margin: 0 15px;
+    }
+
+    .newsletter-container {
+      margin: 30px 30px 0;
+    }
+  }
+}
+
+@media #{$large-tablet-up} {
+  .news-featured-container {
+    flex-direction: row;
+    .news-box {
+      width: 65%;
+      flex: 65%;
+      .info-container {
+        flex-direction: row;
+        .info {
+          flex: 75%;
+          width: 75%;
+          h3 {
+          }
+          p {
+          }
+        }
+        .read-more {
+          flex: 25%;
+          width: 25%;
+          .arrow {
+          }
+        }
+      }
+    }
+    .categories {
+      flex: 35%;
+      width: 35%;
+      margin-left: 20px;
+    }
+  }
+}

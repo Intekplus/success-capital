@@ -67,4 +67,6 @@ register_nav_menus(array(
 	'footer_navigation' => __tr('Footer Navigation')
 ));
 
+add_theme_support( 'post-thumbnails' );
+
 // YOU SHOULD NOT ADD CODE HERE
