@@ -70,6 +70,9 @@ function get_page_build(){
         case 'heart-stroke-banner':
         include( locate_template("./views/containers/heart-stroke-banner.php"));
         break;
+        case 'transactions':
+        include( locate_template("./views/containers/transactions-banner.php"));
+        break;
       }
     }
   }
