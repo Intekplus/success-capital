@@ -1,0 +1,16 @@
+.news-carousel {
+  .owl-stage-outer {
+    overflow: hidden;
+    width: 100%;
+    .owl-stage {
+      display: flex;
+      .owl-item {
+        .news-box {
+          margin-right: 0;
+          max-width: 100%;
+          min-width: 300px;
+        }
+      }
+    }
+  }
+}

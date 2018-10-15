@@ -34,6 +34,7 @@ $(function () {
       }
     }
   });
+
   $(".quotes-carousel").owlCarousel({
     loop: true,
     margin: 10,
@@ -41,6 +42,15 @@ $(function () {
     items: 1,
     dots: true
   });
+
+  $(".news-carousel").owlCarousel({
+    loop: false,
+    margin: 10,
+    nav: false,
+    dots: false,
+    autoWidth: true
+  });
+
   $(".global-carousel").owlCarousel({
     loop: true,
 

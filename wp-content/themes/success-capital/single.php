@@ -20,8 +20,7 @@ if (have_posts()) {
                 <?= get_field('subtitle') ?>
             </div>
             <div class="shares">
-                <span>
-                    <?= __tr('Partager') ?></span>
+                <span><?= __tr('Partager') ?></span>
                 <a href="http://twitter.com/home?status=<?= get_the_title() ?>+<?= get_permalink() ?>"><i class="fab fa-twitter"></i></a>
                 <a href="https://www.facebook.com/sharer/sharer.php?u=<?= get_permalink() ?>&t=<?= get_the_title() ?>"><i class="fab fa-facebook-f"></i></a>
             </div>
@@ -32,6 +31,9 @@ if (have_posts()) {
                     <?php get_news_build() ?>
                 </div>
             </div>
+        </div>
+        <div class="content-box container--main">
+            <?php include(locate_template('./views/containers/news/news-carousel.php')) ?>
         </div>
     </div>
 </div>
