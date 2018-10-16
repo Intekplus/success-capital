@@ -1,6 +1,7 @@
 .global-carousel-wrapper{
     margin-top: 60px!important;
-
+    height: 740px;
+    margin: 50px auto!important;
     .header{
         
         h3{
@@ -32,6 +33,7 @@
             top: -75px;
             right: 100px;
             display: none;
+            position: absolute;
         }
     }
     @media #{$large-tablet-up}{

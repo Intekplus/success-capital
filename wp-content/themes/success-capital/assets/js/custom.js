@@ -26,7 +26,7 @@ $(function () {
     margin: 10,
     nav: true,
     items: 1,
-    navText: ["<div class='arrow'><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22.129 11.561'><defs><style>.cls-1 {fill: #333;}</style></defs><path id='Tracé_10' data-name='Tracé 10' class='cls-1' d='M1.722,0,.671,1.051,4.65,5.03H-14.626v1.5H4.65L.671,10.51l1.051,1.051L7.5,5.78Z' transform='translate(14.627)'/></svg></div>", "<div class='arrow'><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22.129 11.561'><defs><style>.cls-1 {fill: #333;}</style></defs><path id='Tracé_10' data-name='Tracé 10' class='cls-1' d='M1.722,0,.671,1.051,4.65,5.03H-14.626v1.5H4.65L.671,10.51l1.051,1.051L7.5,5.78Z' transform='translate(14.627)'/></svg></div>"],
+    navText: ["<div class='arrow'>←</div>", "<div class='arrow'>→</div>"],
     dots: false,
     responsive: {
       600: {
@@ -39,16 +39,16 @@ $(function () {
     margin: 10,
     nav: true,
     items: 2,
-    navText: ["<div class='arrow'><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22.129 11.561'><defs><style>.cls-1 {fill: #333;}</style></defs><path id='Tracé_10' data-name='Tracé 10' class='cls-1' d='M1.722,0,.671,1.051,4.65,5.03H-14.626v1.5H4.65L.671,10.51l1.051,1.051L7.5,5.78Z' transform='translate(14.627)'/></svg></div>", "<div class='arrow'><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22.129 11.561'><defs><style>.cls-1 {fill: #333;}</style></defs><path id='Tracé_10' data-name='Tracé 10' class='cls-1' d='M1.722,0,.671,1.051,4.65,5.03H-14.626v1.5H4.65L.671,10.51l1.051,1.051L7.5,5.78Z' transform='translate(14.627)'/></svg></div>"],
+    navText: ["<div class='arrow'>←</div>", "<div class='arrow'>→</div>"],
     dots: false,
     responsive: {
       600: {
         items: 4,
-        navText: ["<div class='arrow'><i class='fas fa-angle-right'></i></div>", "<div class='arrow'><i class='fas fa-angle-right'></i></div>"]
+        navText: ["<div class='arrow'><i class='fas fa-angle-left'></i></div>", "<div class='arrow'><i class='fas fa-angle-right'></i></div>"]
       },
       1200: {
         items: 6,
-        navText: ["<div class='arrow'><i class='fas fa-angle-right'></i></div>", "<div class='arrow'><i class='fas fa-angle-right'></i></div>"]
+        navText: ["<div class='arrow'><i class='fas fa-angle-left'></i></div>", "<div class='arrow'><i class='fas fa-angle-right'></i></div>"]
       }
     }
   });
@@ -72,16 +72,17 @@ $(function () {
   $(".transactions-program-carousel").owlCarousel({
     loop: false,
     margin: 10,
-    nav: false,
-    dots: false,
-    autoWidth: true
+    nav: true,
+    dots: true,
+    autoWidth: true,
+    navText: ["<div class='arrow'>←</div>", "<div class='arrow'>→</div>"]
   });
 
   $('.global-carousel').owlCarousel({
     loop: true,
 
     nav: true,
-    navText: ["<div class='arrow'><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22.129 11.561'><defs><style>.cls-1 {fill: #333;}</style></defs><path id='Tracé_10' data-name='Tracé 10' class='cls-1' d='M1.722,0,.671,1.051,4.65,5.03H-14.626v1.5H4.65L.671,10.51l1.051,1.051L7.5,5.78Z' transform='translate(14.627)'/></svg></div>", "<div class='arrow'><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22.129 11.561'><defs><style>.cls-1 {fill: #333;}</style></defs><path id='Tracé_10' data-name='Tracé 10' class='cls-1' d='M1.722,0,.671,1.051,4.65,5.03H-14.626v1.5H4.65L.671,10.51l1.051,1.051L7.5,5.78Z' transform='translate(14.627)'/></svg></div>"],
+    navText: ["<div class='arrow'>←</div>", "<div class='arrow'>→</div>"],
     responsive: {
       300: {
         items: 1,
@@ -141,6 +142,7 @@ $(function () {
    * Dropdown
    */
   $('.dropdown-label').click(function (e) {
+    e.stopPropagation();
     $('.dropdown-content').not($(this).next()).slideUp();
     $('.dropdown-content').parent().removeClass('active');
     $(this).next().slideToggle().parent().addClass('active');
@@ -426,9 +428,10 @@ var Modal = function ($) {
   };
 
   var close = function close(event) {
-    event.preventDefault();
-    event.stopImmediatePropagation();
-
+    if (!event.target.href) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+    }
     var target = event.target;
     var div = document.getElementById('modal__temp');
 

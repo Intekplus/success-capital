@@ -1,4 +1,4 @@
-<div class="transactions-program-carousel owl-theme owl-carousel">
+<div class="transactions-program-carousel owl-theme owl-carousel container--main-left">
   <?php if ($query->have_posts()) {
     while ($query->have_posts()) {
       $query->the_post();
@@ -24,6 +24,10 @@
         <div class="region">
           <?= $term ?>
         </div>
+        <div class="contact">
+          <?php _tr('VOIR DÉTAILS DU BIEN') ?>
+        </div>
+        
       </div>
     </div>
   </a>

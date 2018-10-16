@@ -17,6 +17,7 @@
     .owl-stage-outer{
         padding-top: 50px;
         height: 150px;
+        margin-top: 30px;
         .item {
           height: 100%;
           img {
@@ -28,12 +29,16 @@
     .owl-nav{
         right: 0;
         top: 0;
+        
+    }
+    @media #{phone-only}{
+      .owl-nav{
+        position: absolute;
+      }
+
     }
     @media #{$tablet-up} {
-      
-      .owl-nav {
-        position: 0;
-      }
+
       .owl-prev {
         position: absolute;
         left: 0;

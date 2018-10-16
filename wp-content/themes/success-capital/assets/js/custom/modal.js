@@ -101,9 +101,10 @@ var Modal = (function($) {
   };
 
   var close = function(event) {
+    if(!event.target.href){
     event.preventDefault();
     event.stopImmediatePropagation();
-
+  }
     var target = event.target;
     var div = document.getElementById('modal__temp');
 

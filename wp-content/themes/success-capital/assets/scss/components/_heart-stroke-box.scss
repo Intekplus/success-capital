@@ -16,23 +16,15 @@
             transition: all 0.3s ease-in-out;
             .button{
                 text-align: right;
-                svg{
-                    height: 10px;
-                    max-width: 30px;
-                    path{
-                        transition: all 0.3s ease-in-out;
-                    }
+                font-weight: bold;
+                line-height: 12px;
+                .arrow{
+                    font-size: 22px;
+                    padding-right: 10px;
                 }
             }
             &:hover{
                 color: $blue;
-                .button{
-                    svg{
-                        path{
-                            fill: $blue;
-                        }
-                    }
-                }
             }
         }
     }

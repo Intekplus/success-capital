@@ -8,8 +8,8 @@ $is_transactions = true;
 ?>
 
 <div class="transactions-program-container">
-  <div class="container--main">
-    <div class="top">
+  <div class="">
+    <div class="top container--main">
       <div class="info">
         <h2><?php the_sub_field('title') ?></h2>
         <p><?php the_sub_field('description') ?></p>
