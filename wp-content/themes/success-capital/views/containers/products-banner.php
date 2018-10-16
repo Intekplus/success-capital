@@ -23,8 +23,7 @@ function generateContent( $id ){
 ?>
 
 <div class="products-banner-wrapper <?php echo !get_sub_field('align_left')?'align-left':'align-right' ?>">
-    <div class="image">
-        <img class="background-image" src="<?php echo get_site_url(); ?>/wp-content/themes/success-capital/assets/img/images/BG.svg">
+    <div class="image" style="background-image: url(<?php echo get_site_url(); ?>/wp-content/themes/success-capital/assets/img/images/BG.svg)">
     </div>
     <div class="products-banner container--main">
         <h2 class="banner-title"><?php the_sub_field('title') ?></h2>

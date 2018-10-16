@@ -2,6 +2,7 @@
   overflow: hidden;
   height: 100%;
 
+  padding-top: 10px;
   .owl-stage {
     display: flex;
     align-items: center;
@@ -26,7 +27,11 @@
       }
     }
   }
-
+  &.absolute{
+    .owl-nav{
+      position: absolute;
+    }
+  }
   .owl-stage-outer {
     overflow: hidden;
     height: 100%;
@@ -45,7 +50,6 @@
   }
 }
 .owl-nav {
-  position: absolute;
   top: 20px;
   right: 33px;
   button {
@@ -53,32 +57,17 @@
     border: none;
     .arrow {
       border: 1px solid $light-grey;
-      padding: 10px;
       transition: all 0.3s ease-in-out;
-      height: 44px;
-      width: 44px;
       margin: 5px;
-      display: flex;
-      align-items: center;
-      svg {
-        height: 10px;
-        color: $black;
-        transition: all 0.3s ease-in-out;
-        padding-top: 2px;
-      }
+      font-size: 22px;
+      color: $light-grey;
+      font-weight: bold;
+      padding: 4.6px 10px;
       &:hover {
         border: 1px solid $light-blue;
         background-color: $light-blue;
-        svg {
-          .cls-1 {
-            fill: $white !important;
-          }
-        }
+        color: white;
       }
-    }
-
-    &.owl-prev {
-      transform: rotate(180deg);
     }
   }
 }

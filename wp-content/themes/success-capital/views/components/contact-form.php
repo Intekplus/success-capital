@@ -21,7 +21,7 @@
             <Textarea class="textArea"></Textarea>
         </div>
         <div class="additionnal-information">
-            <p><?php _tr('Vous pouvez consulter notre Charte de protection des données en cliquant sur') ?><a href="<?php get_home_url() . '/donnees-personnelles' ?>"> <?php _tr('ce lien') ?></a></p>
+            <p><?php _tr('Vous pouvez consulter notre Charte de protection des données en cliquant sur') ?><a href="<?php echo get_home_url() . '/donnees-personnelles' ?>"> <?php _tr('ce lien') ?></a></p>
             
             <span class="obligatoire"><?php _tr('champs obligatoire *') ?> </span>
         </div>

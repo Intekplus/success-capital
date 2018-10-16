@@ -13,10 +13,6 @@
   }
 
   .content {
-    display: flex;
-    flex-direction: column;
-
-    order: 3;
     h2 {
       font-size: 28px;
       padding-bottom: 25px;
@@ -99,7 +95,7 @@
     .image-container {
       .partner-banner {
         margin-top: 50px;
-        left: unset;
+        left: 0;
         width: 100%;
       }
     }

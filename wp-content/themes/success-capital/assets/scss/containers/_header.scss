@@ -10,6 +10,8 @@
       box-shadow: 1px 0px 8px 2px $gray-shadow;
       position: relative;
       justify-content: space-between;
+      -ms-flex-pack: space-between;
+
       align-items: center;
       .logo-wrapper {
         margin: auto 0;
@@ -27,6 +29,7 @@
         position: relative;
         padding: 25px;
         transition: all 0.3s ease-in-out;
+        margin-left:auto;
         span {
           position: absolute;
           left: 11px;

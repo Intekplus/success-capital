@@ -1,4 +1,4 @@
-<div class="partner-carousel owl-theme">
+<div class="partner-carousel owl-theme absolute">
 <?php
 
 // check if the repeater field has rows of data
