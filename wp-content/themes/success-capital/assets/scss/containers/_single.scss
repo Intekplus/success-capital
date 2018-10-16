@@ -47,7 +47,6 @@
     .box {
       padding-top: 80px !important;
       padding-bottom: 80px !important;
-
       h1,
       h2,
       h3,
@@ -56,6 +55,11 @@
         margin-bottom: 15px;
         color: $dark-blue;
         font-weight: bold;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
       }
 
       strong {
@@ -69,6 +73,7 @@
       ul {
         li {
           margin-bottom: 15px;
+          padding-left: 20px;
         }
         li::before {
           content: '\2022';
@@ -79,7 +84,7 @@
           line-height: 22px;
           font-size: 36px;
           vertical-align: text-bottom;
-          padding-right: 10px;
+          margin-right: 10px;
           margin-left: -20px;
         }
       }
@@ -137,6 +142,8 @@
   .single {
     .content-box {
       .box {
+        padding-right: 185px !important;
+        padding-left: 185px !important;
         .cols {
           flex-direction: row;
           > div {
