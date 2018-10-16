@@ -64,6 +64,7 @@
       &:first-child {
         flex: 1;
         width: 35%;
+        min-width: 400px;
         padding-right: 50px;
       }
       &:last-child {

@@ -34,6 +34,9 @@
       }
 
       .employee-content {
+        h2 {
+          font-family: $Montserrat;
+        }
         .employee-desc {
           padding: 0;
           margin-bottom: 30px;
