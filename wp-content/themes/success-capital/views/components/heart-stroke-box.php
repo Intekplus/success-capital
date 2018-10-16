@@ -16,7 +16,8 @@
         </defs>
         <path id="Tracé_10" data-name="Tracé 10" class="cls-1" d="M1.722,0,.671,1.051,4.65,5.03H-14.626v1.5H4.65L.671,10.51l1.051,1.051L7.5,5.78Z" transform="translate(14.627)"/>
         </svg>    
-        <?php _tr("Détails du bien") ?></div>
+        <span><?php _tr("Détails du bien") ?></span>
+        </div>
     </a>
     </div>
 </div>

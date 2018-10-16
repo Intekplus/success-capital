@@ -53,13 +53,14 @@
     border: none;
     .arrow {
       border: 1px solid $light-grey;
-      padding: 10px;
       transition: all 0.3s ease-in-out;
       height: 44px;
       width: 44px;
       margin: 5px;
-      display: flex;
-      align-items: center;
+      position: relative;
+      line-height: 38px;
+      font-size: 12px;
+      color: $black;
       svg {
         height: 10px;
         color: $black;
@@ -76,7 +77,6 @@
         }
       }
     }
-
     &.owl-prev {
       transform: rotate(180deg);
     }

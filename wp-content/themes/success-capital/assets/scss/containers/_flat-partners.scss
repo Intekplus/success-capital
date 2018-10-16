@@ -32,7 +32,7 @@
     @media #{$tablet-up} {
       
       .owl-nav {
-        position: unset;
+        position: 0;
       }
       .owl-prev {
         position: absolute;

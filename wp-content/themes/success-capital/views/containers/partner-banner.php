@@ -7,7 +7,7 @@
             <a class="bg-white button" href="<?php the_sub_field("button_link") ?>"><?php the_sub_field("button_text") ?></a>
         </div>
         <div class="carousel-container">
-            <div class="carousel-title">Nos partenaires bancaires et immobiliers</div>
+            <div class="carousel-title"><?= __tr('Nos partenaires bancaires et immobiliers') ?></div>
             <?php 
             include( locate_template("./views/components/partner-carousel.php"));
             ?>
