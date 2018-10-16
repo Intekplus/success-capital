@@ -1,59 +1,54 @@
-.sc-en-chiffre{
-    background-color: $lighter-blue;
-    text-align: center;
-    h2{
-        font-size: 28px;
-        padding:7% 20% 7% 20%;
-        font-weight: normal;
+.sc-en-chiffre {
+  background-color: rgba(#729ad0, 0.1);
+  text-align: center;
+  h2 {
+    font-size: 36px;
+    padding: 7% 20% 7% 20%;
+    font-weight: normal;
+  }
+  .stats {
+    .stat-title-wrapper {
+      padding: 40px 50px;
+      flex: 1;
+      .stat {
+        color: $light-blue;
+        font-size: 38px;
+        font-weight: bold;
+      }
+      .desc {
+        font-size: 24px;
+      }
     }
-    .stats{
-        .stat-title-wrapper{
-            padding:5%;
-            .stat{
-                color: $light-blue;
-                font-size:38px;
-                padding-bottom:2%;
-                font-weight: bold;
-            }
-            .desc{
-                font-size: 24px;
-            }
-        }
+  }
+  @media #{$large-tablet-up} {
+    h2 {
+      padding: 0;
+      padding-top: 30px;
+      padding-bottom: 15px;
     }
-    @media #{$large-tablet-up}{
-        h2{
-            font-size: 36px;
-            padding:3% 20% 2% 20%;
+    .stats {
+      display: flex;
+      flex-direction: row;
+      margin: auto;
+      justify-content: space-around;
+      .stat-title-wrapper {
+        .stat {
         }
-        .stats{
-            display: flex;
-            flex-direction: row;
-            padding-bottom: 1%;
-            margin: auto;
-            justify-content: space-around;
-            padding-top: 30px;
-            padding-bottom: 30px;
-            .stat-title-wrapper{
-                .stat{
-
-                }
-                .desc{
-
-                }
-                
-            }
-            .splitter{
-                position:relative;
-                &::after{
-                content:"";
-                position: absolute;
-                top:18px;
-                right:0;
-                height: 80%;
-                width:1px;
-                background-color: $light-grey;
-    
-                }}
+        .desc {
         }
+      }
+      .splitter {
+        position: relative;
+        &::after {
+          content: '';
+          position: absolute;
+          top: 18px;
+          right: 0;
+          height: 80%;
+          width: 1px;
+          background-color: $light-grey;
+        }
+      }
     }
+  }
 }

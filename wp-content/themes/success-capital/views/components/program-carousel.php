@@ -5,8 +5,7 @@ $query = new WP_Query(array(
 ));
 ?>
 
-<div class="transactions-program-container no-bg">
-  <div class="container--main">
+<div class="transactions-program-container no-bg container--main-left">
     <div class="top">
       <div class="info">
         <?php if (is_single()) { ?>
@@ -19,5 +18,4 @@ $query = new WP_Query(array(
       </div>
     </div>
     <?php include(locate_template('./views/components/program-transactions-carousel.php')) ?>
-  </div>
 </div>

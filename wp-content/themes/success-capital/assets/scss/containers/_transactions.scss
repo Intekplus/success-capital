@@ -1,5 +1,7 @@
 .transactions {
-  @extend .container--main;
+  margin: auto;
+  padding-left: 20px;
+  padding-right: 20px;
 
   .transactions--ajax {
     display: flex;

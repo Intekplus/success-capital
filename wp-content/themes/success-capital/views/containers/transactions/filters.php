@@ -1,17 +1,17 @@
 <?php $properties_taxonomies = array(
     array(
-        'name' => get_taxonomy( "budget" )->name,
-        'label' => get_taxonomy( "budget" )->label,
-        'value' => isset($_GET["budget"]) ? $_GET["budget"] : "" ,
-    ),
-    array(
         'name' => get_taxonomy( "location" )->name,
-        'label' => get_taxonomy( "location" )->label,
+        'label' => __tr( "Région" ),
         'value' => isset($_GET["location"]) ? $_GET["location"] : "" ,
     ),
     array(
+        'name' => get_taxonomy("budget" )->name,
+        'label' => __tr( "Budget" ),
+        'value' => isset($_GET["budget"]) ? $_GET["budget"] : "" ,
+    ),
+    array(
         'name' => get_taxonomy( "room" )->name,
-        'label' => get_taxonomy( "room" )->label,
+        'label' => __tr( "Nombre de pièces" ),
         'value' => isset($_GET["room"]) ? $_GET["room"] : "" ,
     ),
 );
@@ -21,11 +21,10 @@
       $raw_terms = get_terms([
         'taxonomy' => $taxonomy["name"],
         'hide_empty' => false,
-        'orderby' => 'id', 
-        'order' => 'DESC', 
       ]);
 
       $terms_names = [];
+
       foreach($raw_terms as $raw_term) {
         $terms_names[] = $raw_term->name;
       }

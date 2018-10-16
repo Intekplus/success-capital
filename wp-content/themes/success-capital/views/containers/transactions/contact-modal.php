@@ -23,7 +23,7 @@
         <div class="additionnal-information">
             <p><?php _tr('Vous pouvez consulter notre Charte de protection des données en cliquant sur') ?><a href="<?php echo get_home_url() . '/donnees-personnelles' ?>"> <?php _tr('ce lien') ?></a></p>
             
-            <span class="obligatoire"><?php _tr('champs obligatoire *') ?> </span>
+            <span class="obligatoire"><?php _tr('*Champs obligatoires') ?> </span>
         </div>
         <div class="submit-button">
             <a class="button bg-blue-left"><?php _tr('envoyer') ?> </a>

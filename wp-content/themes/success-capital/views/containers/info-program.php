@@ -18,7 +18,7 @@
     foreach ($data["files"] as $file) {
       ?>
       <p>        
-        <a href="<?= $file['file'] ?>">
+        <a href="<?= $file['file'] ?>" target="_blank">
           <?php include(locate_template("./assets/img/images/PDF_Normal.svg")); ?>
           <span><?= $file['filename'] ?><span>
         </a>
