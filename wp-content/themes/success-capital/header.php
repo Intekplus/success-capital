@@ -20,8 +20,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 		<meta name="msapplication-TileColor" content="#000000">
 		<meta name="theme-color" content="#ffffff">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		
 		<!--[if IE]>
-			<link rel="stylesheet" href="//localhost:3000/wp-content/themes/intek-theme/assets/ie/ie-styles.min.css" />
+			<link rel="stylesheet" href="<?= get_template_directory_uri() ?>/assets/ie/dist/ie-styles.css" />
 		<![endif]-->
 		<?php wp_head(); ?>
 	</head>
