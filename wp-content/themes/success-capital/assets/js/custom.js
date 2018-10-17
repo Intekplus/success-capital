@@ -238,6 +238,7 @@ $(function () {
         map.panTo(marker.position);
         map.setZoom(16);
       });
+      infowindow.open(map, marker);
     }
   }
   function new_map($el) {

@@ -34,7 +34,7 @@
         min-height: 100px;
       }
     }
-    
+
     .additionnal-information {
       font-size: 12px;
       color: $light-grey;
@@ -97,6 +97,24 @@
     }
   }
 }
+
+.gm-style
+  > div:first-child
+  > div
+  + div
+  > div:last-child
+  > div
+  > div:first-child {
+  /* we have to use !important because we are overwritng inline styles */
+  box-shadow: none !important;
+  overflow: hidden;
+  border-radius: 10px;
+  overflow: hidden;
+  div {
+    background-color: #fff !important;
+  }
+}
+
 .icon-group {
   display: flex;
   flex-direction: column;
@@ -112,12 +130,12 @@
       color: $light-blue;
       padding: 15px;
       border-right: 1px solid $light-blue;
-      margin: 20px 0;
     }
-    a {
+    p {
       font-size: 12px;
       color: $black;
-      padding: 15px;
+      padding: 0 15px;
+      white-space: pre;
     }
   }
 }
