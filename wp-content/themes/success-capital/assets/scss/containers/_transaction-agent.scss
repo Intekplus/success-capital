@@ -1,7 +1,7 @@
 .transaction-agent {
   margin-bottom: 50px;
   .map {
-    box-shadow: 0 3px 6px #0000002e;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.18);
   }
   .transaction-agent-wrapper {
     @extend .container--main;
@@ -10,7 +10,7 @@
       width: auto;
       max-width: 300px;
       min-width: 300px;
-      box-shadow: 0 3px 6px #0000002e;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.18);
 
       .button {
         display: block;
