@@ -1,84 +1,75 @@
-.partner-banner-wrapper{
-    padding-bottom: 300px;
-    position: relative;
-    .partner-banner{
-        background-repeat: no-repeat;
-       
-        margin: 0 !important;
-        min-height: 350px;
-        background-size: cover;
+.partner-banner-wrapper {
+  .partner-banner {
+    padding: 50px 0 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+    h3 {
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+    p {
+      font-size: 14px;
+      line-height: 1.8;
+      margin-bottom: 30px;
+    }
+    .container--main {
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+    }
+    .col {
+      padding-left: 35px;
+      padding-right: 35px;
 
-        background-position: top center;
-        padding-top: 7%;
-        padding-bottom: 7%;
-        
-        .col{
-            width: 100%;
-            flex: 100%;
-            margin:0 !important;
-            color: $white;
-            padding-bottom: 80px;
-            h1,h3,p{
-                padding-right: 30px;
-            }
-            h1{
-                padding: 20px 0;
-                font-size: 36px;
-                font-weight: bold;
-            }
-            h3{
-                font-size: 24px;
-                font-weight: bold;
-            }
-            p{
-                padding-top: 30px;
-                padding-bottom: 30px;
-            }
-        }
-        .carousel-container{
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            height: 300px;
-            background-color: $white;
-            color: $blue;
-            font-size: 27px;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            .carousel-title{
-                padding-right: 120px;
-            }
-        }
+      @media #{$tablet-only} {
+        padding-left: 70px;
+        padding-right: 70px;
+      }
     }
-    @media #{$tablet-up}{
-        padding-bottom: 400px;
-        .partner-banner{
-            background-position: bottom right;
-            .carousel-container{
-                height: 400px;
-            }
-        }
+    .carousel-container {
+      position: relative;
+      bottom: -20px;
+      margin-bottom: 20px;
+      flex: 1;
+      height: 400px;
+      background-color: $white;
+      color: $blue;
+      font-size: 27px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      margin-top: 30px;
+      .carousel-title {
+        padding-right: 120px;
+      }
     }
-
-    @media #{$desktop-up}{
-        margin-bottom: 50px;
-        margin-top: -75px;
-        padding-bottom: 0;
-        .partner-banner{
-            width: 90%;
-            min-height: 400px;
-            position: relative;
-            .col{
-                width: 50%;
-            flex: 50%;
-            }
-            .carousel-container{
-                
-                right: 90px;
-                width: 580px;
-                box-shadow: 1px 1px 4px 0px #a7a7a7;
-            }
+  }
+  @media #{$desktop-up} {
+    .partner-banner {
+      margin-bottom: 120px;
+      .container--main {
+        flex-direction: row;
+        padding-left: 140px;
+        padding-right: 140px;
+      }
+      .col {
+        width: 50%;
+        padding-right: 100px;
+        padding-left: 0;
+      }
+      .carousel-container {
+        margin-top: 0;
+        bottom: -130px;
+        width: 50%;
+        box-shadow: 1px 1px 4px 0px #a7a7a7;
+        .carousel-title {
         }
+      }
     }
+  }
 }

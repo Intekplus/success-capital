@@ -8,7 +8,7 @@ if (have_posts()) {
         ?>
 
 <div class="container-fluid">
-    <div class="container--main">
+    <div>
         <div class="top-banner" style="background-image: url('<?= get_the_post_thumbnail_url() ?>')">
             <div class="date">
                 <?= get_the_date() ?>

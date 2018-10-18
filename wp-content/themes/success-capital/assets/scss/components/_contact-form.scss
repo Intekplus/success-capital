@@ -58,17 +58,32 @@
       justify-content: center;
       cursor: pointer;
     }
+    .icon-group {
+      .field {
+        margin-top: 25px;
+        i {
+          padding-top: 10px;
+          padding-bottom: 10px;
+          margin: 5px 0;
+        }
+        a {
+          font-size: 12px;
+          color: $black;
+          padding: 0 15px;
+        }
+      }
+    }
   }
   @media #{$large-tablet-up} {
     .column {
       &:first-child {
-        flex: 1;
+        flex: 0.35;
         width: 35%;
         min-width: 400px;
         padding-right: 50px;
       }
       &:last-child {
-        flex: 65%;
+        flex: 1;
         width: 65%;
         padding-top: 75px;
       }
@@ -118,7 +133,6 @@
 .icon-group {
   display: flex;
   flex-direction: column;
-
   font-size: 12px;
   color: $black;
   .field {

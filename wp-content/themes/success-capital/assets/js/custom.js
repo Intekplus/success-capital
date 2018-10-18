@@ -70,7 +70,7 @@ $(function () {
   });
 
   $(".transactions-program-carousel").owlCarousel({
-    loop: false,
+    loop: true,
     margin: 10,
     nav: true,
     dots: true,
@@ -80,7 +80,6 @@ $(function () {
 
   $('.global-carousel').owlCarousel({
     loop: true,
-
     nav: true,
     navText: ["<div class='arrow'>←</div>", "<div class='arrow'>→</div>"],
     responsive: {
@@ -93,10 +92,12 @@ $(function () {
         margin: 10
       },
       1200: {
-        items: 3
+        items: 3,
+        margin: 10
       },
       1600: {
-        items: 4
+        items: 4,
+        margin: 10
       }
     },
     dots: false

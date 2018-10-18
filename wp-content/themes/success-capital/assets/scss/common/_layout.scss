@@ -1,7 +1,7 @@
 .container-fluid {
   // All - Centered + padding
   .container--main {
-
+    max-width: 1470px;
     padding-left: 35px;
     padding-right: 35px;
     margin: auto;
@@ -24,6 +24,7 @@
 
   // All - Only right padding
   .container--main-right {
+    max-width: 1470px;
     padding-right: 35px;
     margin: auto;
 
@@ -43,6 +44,7 @@
 
   // All - Only left padding
   .container--main-left {
+    max-width: 1470px;
     padding-left: 35px;
     margin: auto;
 

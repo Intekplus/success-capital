@@ -8,17 +8,21 @@ $is_transactions = true;
 ?>
 
 <div class="transactions-program-container">
-    <div class="top container--main">
-      <div class="info">
-        <h2><?php the_sub_field('title') ?></h2>
-        <p><?php the_sub_field('description') ?></p>
-        <div class="btn-container">
-          <a class="button bg-blue-left" href="./transactions"><?= __tr('En savoir plus') ?></a>
+    <div class="top">
+      <div class="container--main">
+        <div class="info">
+          <h2><?php the_sub_field('title') ?></h2>
+          <p><?php the_sub_field('description') ?></p>
+          <div class="btn-container">
+            <a class="button bg-blue-left" href="./transactions"><?= __tr('En savoir plus') ?></a>
+          </div>
+        </div>
+        <div class="arrow">
+          <?= __tr('Nos coups de cœur') ?>
         </div>
       </div>
-      <div class="arrow">
-        <?= __tr('Nos coups de cœur') ?>
+      <div class="container--main">
+        <?php include(locate_template('./views/components/program-transactions-carousel.php')) ?>
       </div>
     </div>
-    <?php include(locate_template('./views/components/program-transactions-carousel.php')) ?>
 </div>

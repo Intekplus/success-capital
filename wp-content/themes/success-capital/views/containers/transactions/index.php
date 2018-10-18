@@ -1,4 +1,4 @@
-<div class="transactions">
+<div class="transactions container--main">
   <?php include( locate_template("./views/containers/transactions/filters.php")); ?>
   
   <div class="transactions--ajax">

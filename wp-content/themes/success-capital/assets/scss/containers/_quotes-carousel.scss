@@ -13,7 +13,7 @@
             font-size: 28px;
           }
           .quote {
-            font-size: 30px;
+            font-size: 24px;
             font-style: italic;
             padding: 24px 0;
           }
@@ -40,6 +40,7 @@
         border: 0;
         width: 12px;
         height: 12px;
+        min-height: auto;
         border-radius: 100%;
         transition: all 0.3s ease-in-out;
         cursor: pointer;
@@ -57,9 +58,6 @@
             padding: 0 20%;
             .quotes-title {
               font-size: 32px;
-            }
-            .quote {
-              font-size: 30px;
             }
             .author {
               font-size: 18px;

@@ -20,11 +20,12 @@
                 color: $blue;
                 padding-top: 30px;
             }
+            a {
+                margin-top: 20px;
+            }
         }
         .column-wrapper{
             display:flex;
-            
-            padding-top: 50px;
             flex-direction: column;
             .column{
                 flex: 100%;
@@ -42,7 +43,6 @@
                 .column{
                     flex: 50%;
                     width: 50%;
-                    margin-right: 20px;
                     &:first-child{
                         padding-top: 225px;
                     }

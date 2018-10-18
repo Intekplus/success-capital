@@ -1,6 +1,7 @@
 a,
 button {
   &.button {
+    display: inline-block;
     font-size: 14px;
     font-family: $Montserrat;
     padding: 11px 50px;

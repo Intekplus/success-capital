@@ -1,40 +1,45 @@
 .transactions-program-container {
+  .container--main {
+    position: relative;
+    margin: 0 -35px;
+  }
+
   &:not(.no-bg) {
     .top {
       background-color: $lighter-blue;
     }
   }
   .top {
-    display: flex;
-    flex-direction: column;
-    padding-bottom: 300px;
-    padding-top: 40px;
+    .container--main {
+      display: flex;
+      flex-direction: column;
+      padding-top: 40px;
 
-    h2 {
-      font-size: 36px;
-      font-family: $Playfair;
-      font-weight: normal;
-    }
-    .info {
-      flex: 1;
-      .btn-container {
-        height: 30px;
-        margin-top: 20px;
+      h2 {
+        font-size: 36px;
+        font-family: $Playfair;
+        font-weight: normal;
       }
-    }
-    .arrow {
-      flex: 1;
-      align-self: flex-end;
-      text-align: right;
-      color: $blue;
-      font-size: 24px;
-      margin-top: 50px;
-      padding-right: 130px;
+      .info {
+        flex: 1;
+        .btn-container {
+          height: 30px;
+          margin-top: 20px;
+        }
+      }
+      .arrow {
+        flex: 1;
+        align-self: flex-end;
+        text-align: right;
+        color: $blue;
+        font-size: 24px;
+        margin-top: 50px;
+      }
     }
   }
   .transactions-program-carousel {
-    margin-top: -250px;
-    margin-bottom: 50px;
+    margin-top: 20px;
+    width: auto;
     .owl-stage-outer {
       .owl-stage {
         display: flex;
@@ -43,7 +48,7 @@
         margin: 5px;
         flex-wrap: wrap;
         .transaction-program {
-          width: 320px;
+          width: 280px;
           position: relative;
           background-position: center;
           background-size: cover;
@@ -54,12 +59,12 @@
           overflow: hidden;
           max-width: 100%;
           max-height: 400px;
-          display: flex;
-          align-items: flex-end;
           .lower {
             background-color: rgba(0, 0, 0, 0.35);
             color: #fff;
             width: 100%;
+            position: absolute;
+            bottom: 0;
 
             .price {
               font-weight: bold;
@@ -116,15 +121,28 @@
 
 @media #{$large-tablet-up} {
   .transactions-program-container {
+    .container--main {
+      margin: auto;
+    }
     .top {
-      flex-direction: row;
-      .info {
-        p {
-          max-width: 350px;
+      margin-bottom: 200px;
+      .container--main {
+        flex-direction: row;
+        .arrow {
+          padding-right: 130px;
+        }
+        .info {
+          p {
+            max-width: 350px;
+          }
         }
       }
     }
     .transactions-program-carousel {
+      position: relative;
+      top: 250px;
+      margin-top: -200px;
+      margin-bottom: 50px;
       .owl-stage-outer {
         .owl-stage {
           .transaction-program {
