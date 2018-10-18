@@ -21,7 +21,7 @@ $is_transactions = true;
           <?= __tr('Nos coups de cœur') ?>
         </div>
       </div>
-      <div class="container--main">
+      <div class="container--main transactions-program-carousel-wrapper">
         <?php include(locate_template('./views/components/program-transactions-carousel.php')) ?>
       </div>
     </div>

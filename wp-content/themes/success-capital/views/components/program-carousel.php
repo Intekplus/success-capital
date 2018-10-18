@@ -22,7 +22,7 @@ $query = new WP_Query(array(
       } ?>
       </div>
     </div>
-    <div class="container--main">
+    <div class="container--main transactions-program-carousel-wrapper">
       <?php include(locate_template('./views/components/program-transactions-carousel.php')) ?>
     </div>
   </div>

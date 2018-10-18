@@ -21,7 +21,7 @@ $(function () {
   /**
    * Carousel
    */
-  $(".partner-banner-wrapper .partner-carousel").owlCarousel({
+  $('.partner-banner-wrapper .partner-carousel').owlCarousel({
     loop: true,
     margin: 10,
     nav: true,
@@ -34,7 +34,7 @@ $(function () {
       }
     }
   });
-  $(".flat-partners-wrapper .partner-carousel").owlCarousel({
+  $('.flat-partners-wrapper .partner-carousel').owlCarousel({
     loop: true,
     margin: 10,
     nav: true,
@@ -61,15 +61,16 @@ $(function () {
     dots: true
   });
 
-  $(".news-carousel").owlCarousel({
-    loop: false,
+  $('.news-carousel').owlCarousel({
+    loop: true,
     margin: 10,
-    nav: false,
+    nav: true,
     dots: false,
-    autoWidth: true
+    autoWidth: true,
+    navText: ["<div class='arrow'>←</div>", "<div class='arrow'>→</div>"]
   });
 
-  $(".transactions-program-carousel").owlCarousel({
+  $('.transactions-program-carousel').owlCarousel({
     loop: true,
     margin: 10,
     nav: true,

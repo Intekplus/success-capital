@@ -18,15 +18,12 @@ $(function() {
   /**
    * Carousel
    */
-  $(".partner-banner-wrapper .partner-carousel").owlCarousel({
+  $('.partner-banner-wrapper .partner-carousel').owlCarousel({
     loop: true,
     margin: 10,
     nav: true,
     items: 1,
-    navText: [
-      "<div class='arrow'>←</div>",
-      "<div class='arrow'>→</div>",
-    ],
+    navText: ["<div class='arrow'>←</div>", "<div class='arrow'>→</div>"],
     dots: false,
     responsive: {
       600: {
@@ -34,32 +31,29 @@ $(function() {
       },
     },
   });
-  $(".flat-partners-wrapper .partner-carousel").owlCarousel({
+  $('.flat-partners-wrapper .partner-carousel').owlCarousel({
     loop: true,
     margin: 10,
     nav: true,
     items: 2,
-    navText: [
-      "<div class='arrow'>←</div>",
-      "<div class='arrow'>→</div>",
-    ],
+    navText: ["<div class='arrow'>←</div>", "<div class='arrow'>→</div>"],
     dots: false,
     responsive: {
       600: {
         items: 4,
         navText: [
           "<div class='arrow'><i class='fas fa-angle-left'></i></div>",
-          "<div class='arrow'><i class='fas fa-angle-right'></i></div>"
-        ]
+          "<div class='arrow'><i class='fas fa-angle-right'></i></div>",
+        ],
       },
       1200: {
         items: 6,
         navText: [
           "<div class='arrow'><i class='fas fa-angle-left'></i></div>",
-          "<div class='arrow'><i class='fas fa-angle-right'></i></div>"
-        ]
-      }
-    }
+          "<div class='arrow'><i class='fas fa-angle-right'></i></div>",
+        ],
+      },
+    },
   });
 
   $('.quotes-carousel').owlCarousel({
@@ -70,33 +64,28 @@ $(function() {
     dots: true,
   });
 
-  $(".news-carousel").owlCarousel({
-    loop: false,
+  $('.news-carousel').owlCarousel({
+    loop: true,
     margin: 10,
-    nav: false,
+    nav: true,
     dots: false,
     autoWidth: true,
+    navText: ["<div class='arrow'>←</div>", "<div class='arrow'>→</div>"],
   });
 
-  $(".transactions-program-carousel").owlCarousel({
+  $('.transactions-program-carousel').owlCarousel({
     loop: true,
     margin: 10,
     nav: true,
     dots: true,
     autoWidth: true,
-    navText: [
-      "<div class='arrow'>←</div>",
-      "<div class='arrow'>→</div>",
-    ]
+    navText: ["<div class='arrow'>←</div>", "<div class='arrow'>→</div>"],
   });
 
   $('.global-carousel').owlCarousel({
     loop: true,
     nav: true,
-    navText: [
-      "<div class='arrow'>←</div>",
-      "<div class='arrow'>→</div>",
-    ],
+    navText: ["<div class='arrow'>←</div>", "<div class='arrow'>→</div>"],
     responsive: {
       300: {
         items: 1,
@@ -277,7 +266,7 @@ $(function() {
     if ($marker.html()) {
       // create info window
       var infowindow = new google.maps.InfoWindow({
-        content: $marker.html()
+        content: $marker.html(),
       });
       // show info window when marker is clicked
       google.maps.event.addListener(marker, 'click', function() {
@@ -285,7 +274,7 @@ $(function() {
         map.panTo(marker.position);
         map.setZoom(16);
       });
-      infowindow.open(map,marker);
+      infowindow.open(map, marker);
     }
   }
   function new_map($el) {

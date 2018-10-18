@@ -32,7 +32,7 @@ if (have_posts()) {
                 </div>
             </div>
         </div>
-        <div class="content-box container--main discover-news">
+        <div class="content-box discover-news">
             <?php include(locate_template('./views/containers/news/news-carousel.php')) ?>
         </div>
     </div>
