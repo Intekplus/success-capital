@@ -10,6 +10,7 @@ if (have_posts()) {
 <div class="container-fluid">
     <div>
         <div class="top-banner" style="background-image: url('<?= get_the_post_thumbnail_url() ?>')">
+            <div class="white-overlay"></div>
             <div class="date">
                 <?= get_the_date() ?>
             </div>
@@ -28,6 +29,12 @@ if (have_posts()) {
         <div class="shadow-container container-fluid">
             <div class="content-box container--main">
                 <div class="box">
+                    <div class="header-description">
+                        <a href="<?= get_permalink( get_option( 'page_for_posts' ) ); ?>">
+                            <?php include( locate_template("./assets/img/images/Back_normal.svg")); ?>
+                            <?= __tr('Retour aux articles') ?>
+                        </a>
+                    </div>
                     <?php get_news_build() ?>
                 </div>
             </div>

@@ -1,57 +1,63 @@
-.more-banner-wrapper{
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center bottom;
-    height: 700px;
-    display: flex;
-    align-items: center;
+.more-banner-wrapper {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  height: 700px;
+  display: flex;
+  align-items: center;
 
-    .link{
-        background-color: rgba(255, 255, 255, 0.64);
-        max-width: 650px;
-        margin-right: 10px!important;
-        margin-left: 0!important;
-        padding-right: 20px!important;
-        padding-top: 25px;
-        padding-bottom: 25px;
-        font-size: 32px;
-        color: $black;
-        font-weight: bold;
-        font-family: $Playfair;
-        .button{
-            font-size: 14px;
-            text-transform: uppercase;
-            padding-top: 40px;
-            display: flex;
-            align-items: center;
-            font-family:$Montserrat;
-            svg{
-                padding-right: 40px;
-                width: 26px;
-                height: 12px;
-            }
-        }
-        &:hover{
-            .button{
-                svg{
-                    animation: shake 1s ease-in-out 0s infinite;
-                }
-            }
-        }
+  .link {
+    background-color: rgba(255, 255, 255, 0.64);
+    max-width: 650px;
+    margin-right: 10px !important;
+    margin-left: 0 !important;
+    padding-right: 20px !important;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    font-size: 32px;
+    color: $black;
+    font-weight: bold;
+    font-family: $Playfair;
+    .button {
+      font-size: 14px;
+      text-transform: uppercase;
+      padding-top: 40px;
+      display: flex;
+      align-items: center;
+      font-family: $Montserrat;
+      svg {
+        padding-right: 40px;
+        width: 26px;
+        height: 12px;
+      }
     }
-    @media #{$desktop-up}{
-        .link{
-            font-size: 40px;
+    &:hover {
+      .button {
+        svg {
+          animation: shake 1s ease-in-out 0s infinite;
         }
+      }
     }
+  }
+  @media #{$desktop-up} {
+    .link {
+      font-size: 40px;
+    }
+  }
 }
 @keyframes shake {
-    0%, 100% {
-      transform: translateX(0);
-    }
-    
-    50% {
-        transform: translateX(5px);
-    }
-
+  0%,
+  100% {
+    transform: translateX(0);
   }
+
+  50% {
+    transform: translateX(5px);
+  }
+}
+
+.home {
+  .more-banner-wrapper {
+      margin-top: -50px;
+  }
+}

@@ -1,18 +1,30 @@
 .single {
   .top-banner {
     min-height: 300px;
+    position: relative;
+    z-index: 1;
+    .white-overlay {
+      z-index: 2;
+      height: 100%;
+      width: 100%;
+      background-color: #fff;
+      opacity: 0.8;
+      position: absolute;
+    }
     .title,
     .subtitle,
     .shares {
-      // padding: 100px 35px;
       max-width: 630px;
       margin: auto;
       text-align: center;
       color: $black;
+      position: relative;
+      z-index: 3;
     }
     .date {
+      position: relative;
+      z-index: 3;
       padding-top: 120px;
-      margin-bottom: 15px;
       color: $light-blue;
       font-weight: bold;
       text-align: center;
@@ -22,6 +34,7 @@
       font-size: 40px;
       margin-bottom: 20px;
       font-family: $Playfair;
+      line-height: 1.25;
     }
     .subtitle {
       font-size: 18px;
@@ -45,8 +58,12 @@
     font-size: 14px;
     color: $black;
     .box {
-      padding-top: 80px !important;
+      padding-top: 30px !important;
       padding-bottom: 80px !important;
+      .header-description {
+        padding: 0;
+        margin-top: 0 !important;
+      }
       h1,
       h2,
       h3,
@@ -144,6 +161,9 @@
       .box {
         padding-right: 185px !important;
         padding-left: 185px !important;
+        .header-description {
+          margin-left: -160px !important;
+        }
         .cols {
           flex-direction: row;
           > div {
