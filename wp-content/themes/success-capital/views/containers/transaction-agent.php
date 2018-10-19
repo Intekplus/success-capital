@@ -1,18 +1,13 @@
-<?php 
-  $description = "Mouna Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
-  $image = get_site_url() . "/wp-content/themes/success-capital/assets/img/images/1GillesNoreils.jpeg";
-  $name = "Gilles Noreils";
-?>
-
 <div class="transaction-agent">
+
   <div class="transaction-agent-wrapper">
     <div class="employee-container transaction-agent-card">
       <div class="employee-content">
         <h1><?= __("Votre agent", "intek-theme") ?></h1>
-        <img class="pic" alt="portrait" src="<?= $image ?>">
-        <h2><?= $name ?></h2>
+        <img class="pic" alt="portrait" src="<?= get_field('image',get_field('agent')) ?>">
+        <h2><?= get_the_title(get_field('agent')) ?></h2>
         <div class="employee-desc">
-          <?= $description ?>
+          <?= get_field('description',get_field('agent')) ?>
         </div>
         <a href="#" data-modal="#modal" class="button bg-blue-left modal__trigger">
           <?= __("Contacter", "intek-theme") ?>

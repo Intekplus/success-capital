@@ -1,12 +1,12 @@
 <?php
-function property_cpt() {
+function employe_cpt() {
 
 	$labels = array(
-		'name'                  => _x( 'Propriétés', 'Post Type General Name', 'intek-theme' ),
-		'singular_name'         => _x( 'Propriété', 'Post Type Singular Name', 'intek-theme' ),
-		'menu_name'             => __( 'Propriétés', 'intek-theme' ),
-		'name_admin_bar'        => __( 'Propriétés', 'intek-theme' ),
-		'archives'              => __( 'Archives de propriétés', 'intek-theme' ),
+		'name'                  => _x( 'Employes', 'Post Type General Name', 'intek-theme' ),
+		'singular_name'         => _x( 'Employe', 'Post Type Singular Name', 'intek-theme' ),
+		'menu_name'             => __( 'Employes', 'intek-theme' ),
+		'name_admin_bar'        => __( 'Employes', 'intek-theme' ),
+		'archives'              => __( 'Archives de Employes', 'intek-theme' ),
 		'attributes'            => __( 'Item Attributes', 'intek-theme' ),
 		'parent_item_colon'     => __( 'Parent Item:', 'intek-theme' ),
 		'all_items'             => __( 'All Items', 'intek-theme' ),
@@ -31,27 +31,27 @@ function property_cpt() {
 		'filter_items_list'     => __( 'Filter items list', 'intek-theme' ),
 	);
 	$args = array(
-		'label'                 => __( 'Propriété', 'intek-theme' ),
-		'description'           => __( 'Properties for sale', 'intek-theme' ),
+		'label'                 => __( 'Employe', 'intek-theme' ),
+		'description'           => __( 'Employe', 'intek-theme' ),
 		'labels'                => $labels,
-		'supports'              => array( 'title', 'editor' ),
-		'taxonomies'            => array( 'category', 'post_tag' ),
+		'supports'              => array( 'title', 'thumbnail' ),
+		'taxonomies'            => array(),
 		'hierarchical'          => true,
-		'public'                => true,
+		'public'                => false,
 		'show_ui'               => true,
 		'show_in_menu'          => true,
-		'menu_position'         => 5,
-		'menu_icon'             => 'dashicons-admin-home',
+		'menu_position'         => 6,
+		'menu_icon'             => 'dashicons-businessman',
 		'show_in_admin_bar'     => true,
 		'show_in_nav_menus'     => true,
 		'can_export'            => true,
-		'has_archive'           => true,
+		'has_archive'           => false,
 		'exclude_from_search'   => false,
 		'publicly_queryable'    => true,
 		'capability_type'       => 'page',
 		'show_in_rest'          => true,
 	);
-	register_post_type( 'property', $args );
+	register_post_type( 'employe', $args );
 
 }
-add_action( 'init', 'property_cpt', 0 );
+add_action( 'init', 'employe_cpt', 0 );
