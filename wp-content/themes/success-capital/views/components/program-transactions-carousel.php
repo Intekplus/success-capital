@@ -3,11 +3,11 @@
     while ($query->have_posts()) {
       $query->the_post();
       if ($is_transactions) {
-        $image = sizeOf(get_field('images')) ? get_field('images')[0]['image'] : '';
-        $term = sizeOf(get_the_terms(get_the_ID(), 'location')) ? get_the_terms(get_the_ID(), 'location')[0]->name : '';
+        $image = get_field('images') ? get_field('images')[0]['image'] : '';
+        $term = get_the_terms(get_the_ID(), 'location') ? get_the_terms(get_the_ID(), 'location')[0]->name : '';
       } else {
         $image = get_the_post_thumbnail_url();
-        $term = sizeOf(get_the_terms(get_the_ID(), 'location')) ? get_the_terms(get_the_ID(), 'location')[0]->name : '';
+        $term = get_the_terms(get_the_ID(), 'location') ? get_the_terms(get_the_ID(), 'location')[0]->name : '';
       }
       ?>
   <a href="<?= get_the_permalink() ?>">

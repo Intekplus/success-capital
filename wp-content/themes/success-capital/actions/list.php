@@ -49,9 +49,9 @@ function filtered_properties( $budget, $location, $room ) {
                     "area" => get_field('area'),
                     "rooms" => get_field('rooms'),
                     "description" => get_field('description'),
-                    "budget" => get_the_terms( get_the_ID(), 'budget' )[0]->name,
-                    "room" => get_the_terms( get_the_ID(), 'room' )[0]->name,
-                    "location" => get_the_terms( get_the_ID(), 'location' )[0]->name,
+                    "budget" => get_the_terms(get_the_ID(), 'budget') ? get_the_terms(get_the_ID(), 'budget')[0]->name : '',
+                    "room" => get_the_terms(get_the_ID(), 'room') ? get_the_terms(get_the_ID(), 'room')[0]->name : '',
+                    "location" => get_the_terms(get_the_ID(), 'location') ? get_the_terms(get_the_ID(), 'location')[0]->name : '',
                     "link" => get_permalink(),
                 ];
               include( locate_template("./views/containers/transactions/item.php"));

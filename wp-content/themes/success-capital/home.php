@@ -13,12 +13,43 @@ $current_page = max(1, get_query_var('paged'));
 $query = new WP_Query(array(
 	'category_name' => $cats,
 	'posts_per_page' => 5,
-	'paged' => $current_page
+	'offset' => 1,
+	'paged' => $current_page,
+));
+
+$top_post = new WP_Query(array(
+	'category_name' => $cats,
+	'posts_per_page' => 1,
 ));
 ?>
 
-	<div class="container-fluid">
-		<div id="news-content" class="container--main">
+<div class="container-fluid">
+	<div id="news-content">
+		<?php
+	if ($top_post->have_posts()) {
+		while ($top_post->have_posts()) {
+			$top_post->the_post(); ?>
+		<div class="blog-top-banner" style="background-image: url(<?= get_the_post_thumbnail_url() ?>)">
+			<div class="container--main">
+				<div class="content">
+					<div class="date">
+						<?= get_the_date() ?>
+					</div>
+					<div class="title">
+						<?php the_title() ?>
+					</div>
+					<div class="text">
+						<?= get_the_excerpt() ?>
+					</div>
+					<a class="button bg-blue-left" href="<?= get_the_permalink() ?>">
+						<?= __tr('Lire la suite') ?></a>
+				</div>
+			</div>
+			<div class="white-overlay"></div>
+			<?php } ?>
+		</div>
+		<?php } ?>
+		<div class="container--main">
 			<?php get_page_build(); ?>
 
 			<?php
@@ -33,6 +64,7 @@ $query = new WP_Query(array(
 						echo '</div>';
 						echo '<div class="news-container">';
 					} else {
+						echo '</div>';
 						echo '<div class="news-container">';
 						include(locate_template('./views/components/news-box.php'));
 					}
@@ -41,6 +73,10 @@ $query = new WP_Query(array(
 					include(locate_template('./views/components/news-box.php'));
 				}
 			}
+			echo '</div>';
+		} else {
+			echo '<div class="news-featured-container">';
+			include(locate_template('./views/containers/more-results.php'));
 			echo '</div>';
 		}
 		?>
@@ -65,7 +101,9 @@ $query = new WP_Query(array(
 			echo '</div>';
 		}
 		?>
+		</div>
 	</div>
+</div>
 </div>
 
 <?php get_footer(); ?>

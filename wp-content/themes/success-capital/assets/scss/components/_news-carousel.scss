@@ -7,13 +7,26 @@
     .owl-stage-outer {
       overflow: hidden;
       width: 100%;
+      padding-bottom: 50px;
       .owl-stage {
         display: flex;
         .owl-item {
           .news-box {
+            height: 100%;
             margin-right: 0;
             max-width: 100%;
-            min-width: 300px;
+            width: 280px;
+            min-height: 500px;
+            overflow: hidden;
+            @media #{$large-tablet-up} {
+              width: 530px;
+              .news-box-content {
+                .text {
+                  max-height: 200px;
+                  overflow: hidden;
+                }
+              }
+            }
           }
         }
       }

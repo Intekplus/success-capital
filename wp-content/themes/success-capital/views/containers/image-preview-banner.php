@@ -19,7 +19,7 @@
       } ?>
         <?php if (isset($data["rooms"])) { ?>
           <li>
-          <img src="<?php echo get_site_url(); ?>/wp-content/themes/success-capital/assets/img/images/chambre.svg">
+            <?php include(locate_template("./assets/img/images/pieces.svg")); ?>
             <?= $data["rooms"] . __(" pièces", "intek-theme") ?>
           </li>
         <?php 
