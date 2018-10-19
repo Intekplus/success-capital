@@ -1,0 +1,27 @@
+.preparer-sa-retraite{
+    
+    background-size: cover;
+    background-position: 24%;
+    background-repeat: no-repeat;
+    .retraite-text{
+        text-align: center;
+        padding:200px 35px;
+        h2{
+            font-size: 32px;
+        }
+        p{
+            font-size: 14px;
+        }
+    }  
+    @media #{$large-tablet-up}{
+    background-position: center;
+    .retraite-text{
+        h2{
+            font-size: 40px;
+        }
+        p{
+            font-size: 18px;
+        }
+    }  
+    }
+}

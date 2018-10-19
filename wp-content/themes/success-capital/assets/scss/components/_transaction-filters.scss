@@ -5,8 +5,7 @@
   transform: translateY(-10%);
   background: white;
   box-shadow: 0 3px 6px #0000003b;
-  max-width: 1050px;
-  margin: auto;
+  width: 100%;
   flex-direction: column;
   & > * {
     width: 100%;
@@ -92,8 +91,6 @@
       background-color: white;
       z-index: 200;
       ul {
-        display: flex;
-        flex-wrap: wrap;
         padding: 0;
         margin: 0;
 
@@ -130,6 +127,8 @@
         min-width: 320px;
         top: 100%;
         left: -1px; // from margin-left: -1px to collapse borders
+        column-count: 2;
+        column-gap: 0;
         ul{
           li{
             min-width: 50%;

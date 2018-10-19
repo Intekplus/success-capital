@@ -1,62 +1,66 @@
-.two-boxes-banner-wrapper{
-    .two-boxes-banner{
-        .boxes-wrapper{
-            display: flex;
-            margin-top: -50px;
-            flex-direction: column;
-            .box{
-                margin: 10px 0;
-                width: 100%;
-                flex: 100%;
-                box-shadow: 0 2px 5px 1px $gray-shadow;
-                text-align: center;
-                padding: 25px;
-                background-color: $white;
-
-            }
-        }
-        .title{
-            text-align:center;
-            background-color: rgba(114, 155, 208, 0.1);
-            padding: 75px 20px 100px 20px;
-        }
-        .text{
-            h2{
-                font-size: 28px;
-                color: $black;
-                font-weight: 100;
-                font-family: $Playfair;
-            }
-            h3{
-                color: $blue;
-                font-size: 24px;
-                font-weight: 100;
-                padding-bottom: 10px;
-            }
-            p{
-                font-size: 14px;
-                color: $black;
-            }
-        }
+.two-boxes-banner-wrapper {
+  .two-boxes-banner {
+    .boxes-wrapper {
+      display: flex;
+      margin-top: -50px;
+      flex-direction: column;
+      .box {
+        margin: 10px 0;
+        width: 100%;
+        flex: 100%;
+        box-shadow: 0 2px 5px 1px $gray-shadow;
+        text-align: center;
+        padding: 25px;
+        background-color: $white;
+      }
     }
-    @media #{$desktop-up}{
-        .two-boxes-banner{
-            .boxes-wrapper{
-                flex-direction: row;
-                .box{
-                    flex: 50%;
-                    width: 50%;
-                    &:first-child{
-                        margin-right: 10px;
-                    }
-                    &:last-child{
-                        margin-left: 10px;
-                    }
-                }
-            }
-            .title{
-                padding: 100px 20% 100px 20%;
-            }
-        }
+    .title {
+      text-align: center;
+      background-color: rgba(114, 155, 208, 0.1);
+      padding: 75px 20px 100px 20px;
     }
+    .text {
+      h2 {
+        font-size: 28px;
+        color: $black;
+        font-weight: 100;
+        font-family: $Playfair;
+        max-width: 630px;
+        margin: auto;
+        margin-bottom: 15px;
+      }
+      h3 {
+        max-width: 630px;
+        margin: auto;
+        color: $blue;
+        font-size: 24px;
+        font-weight: 100;
+        padding-bottom: 10px;
+      }
+      p {
+        font-size: 14px;
+        color: $black;
+      }
+    }
+  }
+  @media #{$desktop-up} {
+    .two-boxes-banner {
+      .boxes-wrapper {
+        flex-direction: row;
+        .box {
+          flex: 50%;
+          width: 50%;
+          &:first-child {
+            margin-right: 10px;
+          }
+          &:last-child {
+            margin-left: 10px;
+          }
+        }
+      }
+      .title {
+        padding: 100px 20% 100px 20%;
+      }
+    }
+  }
 }

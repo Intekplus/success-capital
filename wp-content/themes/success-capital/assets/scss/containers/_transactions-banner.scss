@@ -1,41 +1,53 @@
 .transactions-program-container {
-  padding-top: 50px;
-  &:not(.no-bg) {
-    .top{
-      background-color: $lighter-blue;
+  .transactions-program-carousel-wrapper {
+    &.container--main {
+      display: flex;
+      padding-top: 0 !important;
     }
-
   }
-  .top {
-    display: flex;
-    flex-direction: column;
-    padding-bottom: 300px;
-    
-    h2 {
-      font-size: 36px;
-      font-family: $Playfair;
-      font-weight: normal;
-    }
-    .info {
-      flex: 1;
-      .btn-container {
-        height: 30px;
-        margin-top: 20px;
+  .container--main {
+    position: relative;
+    margin: 0 -35px;
+  }
+
+  &.no-bg {
+    .top {
+      .transactions-program-carousel-wrapper {
+        margin-top: 50px;
       }
     }
-    .arrow {
-      flex: 1;
-      align-self: flex-end;
-      text-align: right;
-      color: $blue;
-      font-size: 24px;
-      margin-top: 50px;
-      padding-right: 130px;
+  }
+
+  &:not(.no-bg) {
+    .top {
+      background-color: $lighter-blue;
+    }
+  }
+  .top {
+    .container--main {
+      padding-top: 40px;
+
+      h2 {
+        font-size: 36px;
+        font-family: $Playfair;
+        font-weight: normal;
+      }
+      .info {
+        flex: 1;
+        padding: 0 35px;
+        .btn-container {
+          height: 30px;
+          margin-top: 20px;
+        }
+      }
+      .arrow {
+        display: none;
+      }
     }
   }
   .transactions-program-carousel {
-    margin-top: -250px;
-    margin-bottom: 50px;
+    margin-top: 20px;
+    width: auto;
     .owl-stage-outer {
       .owl-stage {
         display: flex;
@@ -44,23 +56,23 @@
         margin: 5px;
         flex-wrap: wrap;
         .transaction-program {
-          width: 320px;
+          width: 280px;
           position: relative;
           background-position: center;
           background-size: cover;
           background-repeat: no-repeat;
           min-height: 320px;
-          box-shadow: 0 3px 6px #0000002e;
-          border-radius: 6px;
+          box-shadow: 0 3px 6px rgba(0, 0, 0, 0.18);
+          border-radius: 10px;
           overflow: hidden;
           max-width: 100%;
           max-height: 400px;
-          display: flex;
-          align-items: flex-end;
           .lower {
             background-color: rgba(0, 0, 0, 0.35);
             color: #fff;
             width: 100%;
+            position: absolute;
+            bottom: 0;
 
             .price {
               font-weight: bold;
@@ -95,8 +107,8 @@
     }
     .owl-nav {
       display: block !important;
-      top: -104px;
-      right: 0;
+      top: -115px;
+      left: 0;
       padding-right: 35px;
       margin: auto;
       position: absolute;
@@ -117,15 +129,35 @@
 
 @media #{$large-tablet-up} {
   .transactions-program-container {
+    .container--main {
+      margin: auto;
+    }
     .top {
-      flex-direction: row;
-      .info {
-        p {
-          max-width: 350px;
+      margin-bottom: 200px;
+      .container--main {
+        .arrow {
+          display: block;
+          flex: 1;
+          align-self: flex-end;
+          text-align: right;
+          color: $blue;
+          font-size: 24px;
+          margin-top: 50px;
+          padding: 0 7px;
+        }
+        .info {
+          padding: 0;
+          p {
+            max-width: 350px;
+          }
         }
       }
     }
     .transactions-program-carousel {
+      position: relative;
+      top: 250px;
+      margin-top: -220px;
+      margin-bottom: 50px;
       .owl-stage-outer {
         .owl-stage {
           .transaction-program {

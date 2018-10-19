@@ -8,7 +8,7 @@ if (have_posts()) {
         ?>
 
 <div class="container-fluid">
-    <div class="container--main">
+    <div>
         <div class="top-banner" style="background-image: url('<?= get_the_post_thumbnail_url() ?>')">
             <div class="date">
                 <?= get_the_date() ?>
@@ -32,7 +32,7 @@ if (have_posts()) {
                 </div>
             </div>
         </div>
-        <div class="content-box container--main discover-news">
+        <div class="content-box discover-news">
             <?php include(locate_template('./views/containers/news/news-carousel.php')) ?>
         </div>
     </div>

@@ -1,55 +1,53 @@
-.employee-container{
-    padding:35px 25px; 
-    width: 300px;
-    margin: auto;
-    height:485px;
-    box-shadow:0px 5px 10px -1px $light-grey;
-    .employee-content{
-        position: relative;
-        height: 100%;
-        width: 100%;
-        .pic{
-            height: 140px;
-            border-radius: 50%;
-            box-shadow:0 0 0 7px $light-blue, 0 0 8px 7px $light-grey;
-            display:flex;
-            margin:auto;
-        }
-        .employee-info{
-            padding:12% 12% 7% 12%;
-            text-align: center;
-            .employee-name{
-                font-size: 24px;
-                padding-bottom:7px;
-            }
-            .employee-title{
-                font-size: 14px;
-                font-weight: lighter;
-            }
-        }
-        .employee-desc{
-            padding:5% 0 0 0;
-            text-align: center;
-            font-size: 14px;
-        }
-        .employee-email-container{
-            display: flex;
-            flex-direction: row;
-            position: absolute;
-            bottom: 0;
-            
-            .fas{
-                color:$light-blue;
-                padding:0 2%;
-            }
-            .employee-email{
-                display: flex;
-                padding-left: 5px;
-                width: 100%;
-            }
-        }
-    }   
-    @media #{$tablet-up}{
-        width: 350px;
+.employee-container {
+  padding: 35px 25px;
+  max-width: 100%;
+  margin: auto;
+  height: 485px;
+  box-shadow: 0px 5px 10px -1px $light-grey;
+  .employee-content {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    .pic {
+      height: 140px;
+      border-radius: 50%;
+      box-shadow: 0 0 0 7px $light-blue, 0 0 8px 7px $light-grey;
+      display: flex;
+      margin: auto;
     }
+    .employee-info {
+      padding: 12% 12% 7% 12%;
+      text-align: center;
+      .employee-name {
+        font-size: 24px;
+        padding-bottom: 7px;
+        font-family: $Montserrat;
+      }
+      .employee-title {
+        font-size: 14px;
+        font-weight: lighter;
+      }
+    }
+    .employee-desc {
+      padding: 5% 0 0 0;
+      text-align: center;
+      font-size: 14px;
+    }
+    .employee-email-container {
+      display: flex;
+      flex-direction: row;
+      position: absolute;
+      bottom: 0;
+
+      .fas {
+        color: $light-blue;
+        padding: 0 2%;
+      }
+      .employee-email {
+        display: flex;
+        padding-left: 5px;
+        width: 100%;
+      }
+    }
+  }
 }

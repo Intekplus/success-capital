@@ -1,16 +1,16 @@
-.map{
-    .gmnoprint.gmbundled-control.gm-bundled-control-on-bottom, .gmnoprint{
-        display: none;
-    }
-    button{
-        display: none;
-    }
-    
-}
-.marker{
+.map {
+  .gmnoprint.gmbundled-control.gm-bundled-control-on-bottom,
+  .gmnoprint {
     display: none;
+  }
+  button {
+    display: none;
+  }
+}
+.marker {
+  display: none;
 }
 
 .program-map {
-    margin-top: 50px;
+  margin-top: 50px;
 }

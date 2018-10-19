@@ -9,6 +9,6 @@
   <h1 class="title"><?= $data["title"] ?></h1>
   <div class="description">
     <p class="description_1"><?= $data["description"] ?></p>
-    <p class="description_2"><?= $data["description"] ?></p>
+    <p class="description_2"><?= $data["description_2"] ?></p>
   </div>
 </div>

@@ -6,21 +6,23 @@
     </div>
     <div class="global-carousel owl-theme ">
     <?php
+$query = new WP_Query(array(
+  'posts_per_page' => 10,
+  'post_type' => 'employe'
+));
 
-    // check if the repeater field has rows of data
-    if( have_rows('carousel-elements') ):
+?>
 
-        // loop through the rows of data
-
-        while( have_rows('carousel-elements') ):
-                the_row();
+        <?php if ($query->have_posts()) {
+                while ($query->have_posts()) {
+                    $query->the_post();
                 ?>
-                <div class="item">
+                    <div class="item">
                     <?php include(locate_template("./views/components/employee.php" )); ?>
-                </div>
+                    </div>
                 <?php
-        endwhile;
-    endif;
+                }
+        }
 
     ?>
             

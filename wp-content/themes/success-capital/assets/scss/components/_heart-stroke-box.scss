@@ -1,53 +1,64 @@
-.stroke-wrapper{
-    margin: 25px 0;
-    .stroke-content{
-        background-color: white;
-        position:relative;
-        width: 100%;
-        margin: auto;
-        box-shadow: 0 2px 5px 1px $gray-shadow;
-        padding: 20px;
-        margin-top: -100px;
-        h3{
-            text-transform: uppercase;
-            color: $light-blue;
-        }
-        .stroke-link{
-            transition: all 0.3s ease-in-out;
-            .button{
-                text-align: right;
-                font-weight: bold;
-                line-height: 12px;
-                .arrow{
-                    font-size: 22px;
-                    padding-right: 10px;
-                }
-            }
-            &:hover{
-                color: $blue;
-            }
-        }
+.stroke-wrapper {
+  margin: 25px 0;
+  .stroke-content {
+    background-color: white;
+    position: relative;
+    width: 100%;
+    margin: auto;
+    box-shadow: 0 2px 5px 1px $gray-shadow;
+    padding: 20px;
+    margin-top: -100px;
+    h3 {
+      text-transform: uppercase;
+      color: $light-blue;
     }
-    .image{
-        margin: 0 -35px;
-        transition: all 0.3s ease-in-out;
-        &:hover{
-            filter: brightness(0.7);
+    .stroke-link {
+      transition: all 0.3s ease-in-out;
+      .button {
+        text-align: right;
+        font-weight: bold;
+        line-height: 12px;
+        .arrow {
+          font-size: 22px;
+          padding-right: 10px;
         }
-        img{
-            width: 100%;
-            height: auto;
-            box-shadow: 0 2px 5px 1px $gray-shadow;
-        }
+      }
+      &:hover {
+        color: $blue;
+      }
     }
-    @media #{$large-tablet-up}{
-        .stroke-content{
-            width: 70%;
-            margin: -100px 0 0 auto;
-        }
-        .image{
-            margin: 0;
-            margin-right: 40px;
-        }
+  }
+  .image {
+    margin: 0 -35px;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      filter: brightness(0.7);
     }
+    img {
+      width: 100%;
+      height: auto;
+      box-shadow: 0 2px 5px 1px $gray-shadow;
+    }
+  }
+}
+
+@media #{$large-tablet-up} {
+  .heart-stroke {
+    .stroke-content {
+      width: 70%;
+      margin: -100px -30px 0 auto;
+    }
+    .image {
+      margin: 0;
+    }
+    .column:nth-child(odd) {
+        margin-right: 20px;
+      .image {
+        margin-right: 30px;
+      }
+      .stroke-content {
+        margin: -100px 0 0 auto;
+      }
+    }
+  }
 }
