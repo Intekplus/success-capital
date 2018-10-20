@@ -177,6 +177,7 @@ $(function() {
         .removeClass('active');
     }
   });
+
 // scroll arrow
   
   $("#main-page-arrow").click(function() {
@@ -184,9 +185,26 @@ $(function() {
         scrollTop: $(".heart-stroke-wrapper").offset().top},
         'slow');
   });
+//IE polyfill
+  var userAgent, ieReg, ie;
+userAgent = window.navigator.userAgent;
+ieReg = /msie|Trident.*rv[ :]*11\./gi;
+ie = ieReg.test(userAgent);
+
+if(ie) {
+  $(".img-container").each(function () {
+    var $container = $(this),
+        imgUrl = $container.find("img").prop("src");
+    if (imgUrl) {
+      $container.css("backgroundImage", 'url(' + imgUrl + ')').addClass("custom-object-fit");
+    }
+  });
+}
+
   /**
    * Transaction filters
    */
+  
   $('.properties_filters').submit(function(e) {
     e.preventDefault();
     var formData = 'action=ajax_filtered_properties&' + $(this).serialize();
