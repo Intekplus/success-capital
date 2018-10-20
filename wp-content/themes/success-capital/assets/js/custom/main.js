@@ -177,7 +177,13 @@ $(function() {
         .removeClass('active');
     }
   });
-
+// scroll arrow
+  
+  $("#main-page-arrow").click(function() {
+    $('html,body').animate({
+        scrollTop: $(".heart-stroke-wrapper").offset().top},
+        'slow');
+  });
   /**
    * Transaction filters
    */

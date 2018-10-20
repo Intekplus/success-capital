@@ -1,49 +1,73 @@
-.more-banner-wrapper {
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center bottom;
-  height: 700px;
-  display: flex;
-  align-items: center;
-
-  .link {
-    background-color: rgba(255, 255, 255, 0.64);
-    max-width: 650px;
-    margin-right: 10px !important;
-    margin-left: 0 !important;
-    padding-right: 20px !important;
-    padding-top: 25px;
-    padding-bottom: 25px;
-    font-size: 32px;
-    color: $black;
-    font-weight: bold;
-    font-family: $Playfair;
-    .button {
-      font-size: 14px;
-      text-transform: uppercase;
-      padding-top: 40px;
-      display: flex;
-      align-items: center;
-      font-family: $Montserrat;
-      svg {
-        padding-right: 40px;
-        width: 26px;
-        height: 12px;
-      }
-    }
-    &:hover {
-      .button {
-        svg {
-          animation: shake 1s ease-in-out 0s infinite;
+.more-banner-wrapper{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    height: 700px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    .link{
+        background-color: rgba(255, 255, 255, 0.64);
+        max-width: 650px;
+        margin-right: 10px!important;
+        margin-left: 0!important;
+        padding-right: 20px!important;
+        padding-top: 25px;
+        padding-bottom: 25px;
+        font-size: 32px;
+        color: $black;
+        font-weight: bold;
+        font-family: $Playfair;
+        .button{
+            font-size: 14px;
+            text-transform: uppercase;
+            padding-top: 40px;
+            display: flex;
+            align-items: center;
+            font-family:$Montserrat;
+            svg{
+                padding-right: 40px;
+                width: 26px;
+                height: 12px;
+            }
         }
-      }
+        &:hover{
+            .button{
+                svg{
+                    animation: shake 1s ease-in-out 0s infinite;
+                }
+            }
+        }
     }
-  }
-  @media #{$desktop-up} {
-    .link {
-      font-size: 40px;
+    .down-arrow{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $light-blue;
+        font-size: 29px;
+        padding: 20px;
+        bottom: -15px;
+        right: 0;
+        left:0;
+        margin: auto;
+        position: absolute;
+        cursor: pointer;
+        &:hover{
+            animation: updown 1s ease-in-out 0s infinite;
+        }
     }
-  }
+    @media #{$desktop-up}{
+        .link{
+            font-size: 40px;
+        }
+        .down-arrow{
+            bottom: -51px;
+            right: 0;
+            left: unset;
+            margin: unset;
+        }
+    }
+
 }
 @keyframes shake {
   0%,
@@ -53,6 +77,16 @@
 
   50% {
     transform: translateX(5px);
+  }
+  @keyframes updown {
+    0%, 100% {
+      transform: translatey(0);
+    }
+    
+    50% {
+        transform: translatey(5px);
+    }
+
   }
 }
 

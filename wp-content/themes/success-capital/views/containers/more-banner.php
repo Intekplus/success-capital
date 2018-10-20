@@ -14,4 +14,7 @@
 </svg>    
         <?php the_sub_field("bouton_text") ?></div>
     </a>
+    <a class="down-arrow" id="main-page-arrow">
+      ↓
+    </a>
 </div>
