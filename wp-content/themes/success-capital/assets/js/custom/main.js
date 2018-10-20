@@ -179,7 +179,7 @@ $(function() {
   });
 
 // scroll arrow
-  
+objectFitImages();
   $("#main-page-arrow").click(function() {
     $('html,body').animate({
         scrollTop: $(".heart-stroke-wrapper").offset().top},
