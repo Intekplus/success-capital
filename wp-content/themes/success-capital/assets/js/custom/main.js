@@ -177,6 +177,14 @@ $(function() {
         .removeClass('active');
     }
   });
+
+  //unselect
+  $('.reset-all').on('click',function(event){
+    event.preventDefault();
+    console.log("uncheck all");
+    console.log($(this).parents('.dropdown-content').find('checkmark').html())
+    $(this).parents('.dropdown-content').find('checkmark').html("");
+  })
 // scroll arrow
   
   $("#main-page-arrow").click(function() {
@@ -205,13 +213,17 @@ $(function() {
   });
 
   $('.dropdown-item input').click(function(e) {
+    var text =$(this).attr('value');
+    if(text.length > 23)
+      text= text.substring(0, 22) + "..."
+
     $(this)
       .parents('.dropdown-wrapper')
       .addClass('selection');
     $(this)
       .parents('.dropdown-wrapper')
       .find('.dropdown-label')
-      .text($(this).attr('value'));
+      .text(text);
   });
   $('.search-button-wrapper a').click(function(e) {
     e.preventDefault();
