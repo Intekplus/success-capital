@@ -19,9 +19,13 @@
       } ?>
         <?php if (isset($data["rooms"])) { ?>
           <li>
-          <img src="<?php echo get_site_url(); ?>/wp-content/themes/success-capital/assets/img/images/chambre.svg">
+            <div class="piece">
+              <svg class="" viewBox="0 0 24 24">
+                <path xmlns="http://www.w3.org/2000/svg" id="Tracé_389" data-name="Tracé 389" class="cls-1" d="M118.153,2.03a.394.394,0,0,0,.394-.394V.394A.394.394,0,0,0,118.153,0H100.306a.394.394,0,0,0-.394.394V18.24a.394.394,0,0,0,.394.394h17.846a.394.394,0,0,0,.394-.394V2.95a.394.394,0,1,0-.789,0V9.707h-1.566a.394.394,0,1,0,0,.789h1.566v7.35H106.491V15.938a.394.394,0,1,0-.789,0v1.908h-5V.789h5V13.1a.394.394,0,0,0,.789,0V10.5h7.02a.394.394,0,1,0,0-.789h-7.02V.789h11.267v.847A.394.394,0,0,0,118.153,2.03Z" transform="translate(-99.412 0.5)"/>
+              </svg>
+            </div>
             <?= $data["rooms"] . __(" pièces", "intek-theme") ?>
-          </li>
+            </li>
         <?php 
       } ?>
         <?php if (isset($data["bedrooms"])) { ?>
