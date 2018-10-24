@@ -7,8 +7,8 @@
       <?php foreach($terms_names as $term) { ?>
         <li class="dropdown-item">
           <label class="custom-checkbox">
-          <input type="checkbox" name="<?php echo $taxonomy["name"] ?>" value="<?php echo $term ?>">
-          <?php echo $term ?>
+          <input type="checkbox" name="<?php echo $taxonomy["name"] ?>" value="<?php echo $term['slug'] ?>">
+          <?php echo $term['name'] ?>
           <span class="checkmark"></span>
       </label>
         

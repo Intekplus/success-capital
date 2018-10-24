@@ -145,6 +145,7 @@ $(function () {
    */
   $('.dropdown-label').click(function (e) {
     e.stopPropagation();
+
     $('.dropdown-content').not($(this).next()).slideUp();
     $('.dropdown-content').parent().removeClass('active');
     $(this).next().slideToggle().parent().addClass('active');
@@ -152,7 +153,9 @@ $(function () {
 
   // Click away listener
   $(document).on('click', function (event) {
-    if (event.target.className !== 'dropdown-content' && event.target.className !== 'dropdown-label' && event.target.className !== 'dropdown-item' && event.target.className !== 'dropdown-wrapper') {
+    event.stopPropagation();
+
+    if (event.target.className !== 'dropdown-content' && event.target.className !== 'dropdown-label' && event.target.className !== 'dropdown-item' && event.target.className !== 'custom-checkbox' && event.target.className !== 'checkmark' && event.target.className !== 'dropdown-wrapper' && event.target.className !== '') {
       $('.dropdown-content').slideUp();
       $('.dropdown-content').parent().removeClass('active');
     }
@@ -161,26 +164,60 @@ $(function () {
   //unselect
   $('.reset-all').on('click', function (event) {
     event.preventDefault();
-    console.log("uncheck all");
-    console.log($(this).parents('.dropdown-content').find('checkmark').html());
-    $(this).parents('.dropdown-content').find('checkmark').html("");
+
+    $(this).parents('.dropdown-content').find('input:checkbox').prop('checked', false);
   });
   // scroll arrow
 
-  $("#main-page-arrow").click(function () {
+  $('#main-page-arrow').click(function () {
     $('html,body').animate({
-      scrollTop: $(".heart-stroke-wrapper").offset().top }, 'slow');
+      scrollTop: $('.heart-stroke-wrapper').offset().top
+    }, 'slow');
   });
   /**
    * Transaction filters
    */
   $('.properties_filters').submit(function (e) {
     e.preventDefault();
-    var formData = 'action=ajax_filtered_properties&' + $(this).serialize();
+
+    var values = $(this).serializeArray();
+
+    var budget = values.filter(function (obj) {
+      return obj.name === 'budget';
+    }).map(function (obj) {
+      return obj.value;
+    });
+
+    var location = [];
+    if (values.find(function (obj) {
+      return obj.value === 'location_all';
+    }) === undefined) {
+      location = values.filter(function (obj) {
+        return obj.name === 'location';
+      }).map(function (obj) {
+        return obj.value;
+      });
+    }
+
+    var room = [];
+    if (values.find(function (obj) {
+      return obj.value === 'room_all';
+    }) === undefined) {
+      room = values.filter(function (obj) {
+        return obj.name === 'room';
+      }).map(function (obj) {
+        return obj.value;
+      });
+    }
 
     $.ajax({
       url: WPURLS.ajaxurl,
-      data: formData,
+      data: {
+        action: 'ajax_filtered_properties',
+        budget: budget,
+        location: location,
+        room: room
+      },
       method: 'POST',
       success: function success(data) {
         $('.transactions--ajax').html(data);
@@ -191,13 +228,6 @@ $(function () {
     });
   });
 
-  $('.dropdown-item input').click(function (e) {
-    var text = $(this).attr('value');
-    if (text.length > 23) text = text.substring(0, 22) + "...";
-
-    $(this).parents('.dropdown-wrapper').addClass('selection');
-    $(this).parents('.dropdown-wrapper').find('.dropdown-label').text(text);
-  });
   $('.search-button-wrapper a').click(function (e) {
     e.preventDefault();
     $(this).parents('.properties_filters').submit();

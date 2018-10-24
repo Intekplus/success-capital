@@ -26,7 +26,9 @@
         $terms_names = [];
 
         foreach ($raw_terms as $raw_term) {
-            $terms_names[] = $raw_term->name;
+            $term['slug'] = $raw_term->slug;
+            $term['name'] = $raw_term->name;
+            $terms_names[] = $term;
         }
         include(locate_template("./views/containers/transactions/dropdown.php"));
     } ?>

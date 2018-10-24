@@ -1,5 +1,6 @@
 <?php 
 function ajax_filtered_properties(){
+    // print_r($_POST["budget"]);
     filtered_properties( $_POST["budget"], $_POST["location"], $_POST["room"]);
     wp_die();
   }
