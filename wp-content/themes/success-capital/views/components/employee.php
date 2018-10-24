@@ -10,7 +10,7 @@
         </div>
         <div class="employee-email-container">
             <i class="fas fa-envelope"></i>
-            <div class="employee-email"><?php the_field('email') ?></div>
+            <div class="employee-email"><a href="mailto:<?php the_field('email') ?>"><?php the_field('email') ?></a></div>
         </div>
     </div>
 </div>

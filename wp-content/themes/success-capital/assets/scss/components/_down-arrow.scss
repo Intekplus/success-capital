@@ -1,0 +1,25 @@
+.down-arrow-container {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  background-color: #fff;
+  margin-bottom: 10px;
+  .down-arrow {
+    color: $light-blue;
+    font-size: 29px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    &:hover {
+      animation: updown 1s ease-in-out 0s infinite;
+    }
+  }
+
+  @media #{$desktop-up} {
+    max-width: 250px;
+    width: 250px;
+    position: absolute;
+    right: 0;
+    height: 100%;
+  }
+}

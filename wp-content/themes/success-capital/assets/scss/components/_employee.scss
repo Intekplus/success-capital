@@ -35,17 +35,18 @@
     }
     .employee-email-container {
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
       position: absolute;
       bottom: 0;
-
+      width: 100%;
       .fas {
+        font-size: 24px;
         color: $light-blue;
-        padding: 0 2%;
+        text-align: center;
+        margin-bottom: 5px;
       }
       .employee-email {
-        display: flex;
-        padding-left: 5px;
+        text-align: center;
         width: 100%;
       }
     }

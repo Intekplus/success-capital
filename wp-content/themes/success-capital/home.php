@@ -46,9 +46,11 @@ $top_post = new WP_Query(array(
 				</div>
 			</div>
 			<div class="white-overlay"></div>
-			<?php } ?>
+			<?php 
+	} ?>
 		</div>
-		<?php } ?>
+		<?php 
+} ?>
 		<div class="container--main">
 			<?php get_page_build(); ?>
 
@@ -64,7 +66,6 @@ $top_post = new WP_Query(array(
 						echo '</div>';
 						echo '<div class="news-container">';
 					} else {
-						echo '</div>';
 						echo '<div class="news-container">';
 						include(locate_template('./views/components/news-box.php'));
 					}

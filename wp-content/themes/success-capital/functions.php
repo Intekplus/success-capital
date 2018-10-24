@@ -72,4 +72,10 @@ register_nav_menus(array(
 
 add_theme_support('post-thumbnails');
 
+function ga_script() {
+	echo get_field('ga', 'option');
+}
+
+add_action( 'wp_head', 'ga_script' );
+
 // YOU SHOULD NOT ADD CODE HERE
