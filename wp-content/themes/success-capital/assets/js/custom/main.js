@@ -150,6 +150,7 @@ $(function() {
    */
   $('.dropdown-label').click(function(e) {
     e.stopPropagation();
+
     $('.dropdown-content')
       .not($(this).next())
       .slideUp();
@@ -165,11 +166,16 @@ $(function() {
 
   // Click away listener
   $(document).on('click', function(event) {
+    event.stopPropagation();
+
     if (
       event.target.className !== 'dropdown-content' &&
       event.target.className !== 'dropdown-label' &&
       event.target.className !== 'dropdown-item' &&
-      event.target.className !== 'dropdown-wrapper'
+      event.target.className !== 'custom-checkbox' &&
+      event.target.className !== 'checkmark' &&
+      event.target.className !== 'dropdown-wrapper' &&
+      event.target.className !== ''
     ) {
       $('.dropdown-content').slideUp();
       $('.dropdown-content')
@@ -177,23 +183,58 @@ $(function() {
         .removeClass('active');
     }
   });
-// scroll arrow
-  
-  $("#main-page-arrow").click(function() {
-    $('html,body').animate({
-        scrollTop: $(".heart-stroke-wrapper").offset().top},
-        'slow');
+
+  //unselect
+  $('.reset-all').on('click', function(event) {
+    event.preventDefault();
+
+    $(this)
+      .parents('.dropdown-content')
+      .find('input:checkbox')
+      .prop('checked', false);
+  });
+  // scroll arrow
+
+  $('#main-page-arrow').click(function() {
+    $('html,body').animate(
+      {
+        scrollTop: $('.heart-stroke-wrapper').offset().top,
+      },
+      'slow',
+    );
   });
   /**
    * Transaction filters
    */
   $('.properties_filters').submit(function(e) {
     e.preventDefault();
-    var formData = 'action=ajax_filtered_properties&' + $(this).serialize();
+
+    const values = $(this).serializeArray();
+
+    const budget = values
+      .filter(obj => obj.name === 'budget')
+      .map(obj => obj.value);
+
+    let location = [];
+    if (values.find(obj => obj.value === 'location_all') === undefined) {
+      location = values
+        .filter(obj => obj.name === 'location')
+        .map(obj => obj.value);
+    }
+
+    let room = [];
+    if (values.find(obj => obj.value === 'room_all') === undefined) {
+      room = values.filter(obj => obj.name === 'room').map(obj => obj.value);
+    }
 
     $.ajax({
       url: WPURLS.ajaxurl,
-      data: formData,
+      data: {
+        action: 'ajax_filtered_properties',
+        budget,
+        location,
+        room,
+      },
       method: 'POST',
       success: function(data) {
         $('.transactions--ajax').html(data);
@@ -204,15 +245,6 @@ $(function() {
     });
   });
 
-  $('.dropdown-item input').click(function(e) {
-    $(this)
-      .parents('.dropdown-wrapper')
-      .addClass('selection');
-    $(this)
-      .parents('.dropdown-wrapper')
-      .find('.dropdown-label')
-      .text($(this).attr('value'));
-  });
   $('.search-button-wrapper a').click(function(e) {
     e.preventDefault();
     $(this)
