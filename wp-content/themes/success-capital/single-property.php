@@ -22,6 +22,8 @@ $data = [
 ];
 
 
+$hide_address = true;
+
 get_header(); ?>
 
 <div class="wrap">

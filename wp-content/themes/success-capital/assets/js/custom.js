@@ -275,7 +275,7 @@ $(function () {
     });
     map.markers.push(marker);
     // if marker contains HTML, add it to an infoWindow
-    if ($marker.html()) {
+    if ($marker.html() && !$marker[0].classList.contains('hide')) {
       // create info window
       var infowindow = new google.maps.InfoWindow({
         content: $marker.html()
