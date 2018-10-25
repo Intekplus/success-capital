@@ -11,10 +11,12 @@
     .header-button {
       h2 {
         font-size: 28px;
+        font-weight: 300;
         color: $black;
         font-family: $Playfair;
       }
       p {
+        font-size: 14px;
         color: $black;
       }
       .comp-title {
@@ -53,7 +55,7 @@
           font-size: 36px;
         }
         p {
-          width: 300px;
+          width: 350px;
         }
         .comp-title {
           text-align: right;

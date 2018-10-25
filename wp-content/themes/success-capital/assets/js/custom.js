@@ -1,6 +1,49 @@
-"use strict";
+'use strict';
 
-$(function () {});
+$(function () {
+  function sendMail(fields, form) {
+    $.ajax({
+      url: WPURLS.ajaxurl,
+      data: {
+        action: 'ajax_send_contact_mail',
+        fields: fields
+      },
+      method: 'POST',
+      beforeSend: function beforeSend() {
+        form.html('<div class="loader-container"><img src="../../wp-content/themes/success-capital/assets/img/images/loader.gif"></div>');
+      },
+      success: function success(data) {
+        if (data === 'success') {
+          form.html('<p>Message envoyé!</p>');
+        } else {
+          console.log('error');
+        }
+      },
+      error: function error(err) {
+        console.log(err); // TODO: Error handling
+      }
+    });
+  }
+
+  $('.submit-button a').click(function (e) {
+    e.preventDefault();
+    var form = $(this).parents('form');
+    var send = true;
+
+    form.find('input, textarea').each(function () {
+      if (!$(this).val()) {
+        send = false;
+        $(this).addClass('error');
+      } else {
+        $(this).removeClass('error');
+      }
+    });
+
+    if (send) {
+      sendMail(form.serializeArray(), form);
+    }
+  });
+});
 'use strict';
 
 $(function () {
@@ -566,5 +609,36 @@ $(function () {
     window.history.replaceState('', '', '' + params);
     $('#news-content').html('<div class="loader-container"><img src="../wp-content/themes/success-capital/assets/img/images/loader.gif"></div>');
     $('#news-content').load(link + ' #news-content>*');
+  });
+});
+'use strict';
+
+$(function () {
+  $('.newsletter .send-btn').click(function (e) {
+    e.preventDefault();
+    var wrapper = $(this).parents('.newsletter-wrapper');
+    var email = wrapper.find('#email').val();
+    wrapper.fadeOut();
+    $.ajax({
+      url: WPURLS.ajaxurl,
+      data: {
+        action: 'ajax_add_to_newsletter',
+        email: email
+      },
+      method: 'POST',
+      success: function success(data) {
+        var response = JSON.parse(data);
+        if (response.status == 'success') {
+          wrapper.html('Envoyé!');
+          wrapper.fadeIn();
+        } else {
+          wrapper.html('Erreur');
+          console.log(response.message);
+        }
+      },
+      error: function error(err) {
+        console.log(err); // TODO: Error handling
+      }
+    });
   });
 });

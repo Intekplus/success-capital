@@ -27,6 +27,7 @@
     max-width: 1470px;
     padding-right: 35px;
     margin: auto;
+    overflow: visible;
 
     @media #{$tablet-only} {
       padding-right: 70px;
@@ -40,13 +41,13 @@
       padding-right: 140px;
     }
   }
-  
 
   // All - Only left padding
   .container--main-left {
     max-width: 1470px;
     padding-left: 35px;
     margin: auto;
+    overflow: visible;
 
     @media #{$tablet-only} {
       padding-left: 70px;
@@ -58,10 +59,8 @@
 
     @media #{$desktop-up} {
       padding-left: 140px;
-
     }
   }
-  
 
   // mobille - Centered + padding
   // Desktop - Aligned with top red header

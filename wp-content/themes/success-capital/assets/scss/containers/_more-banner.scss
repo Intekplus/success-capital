@@ -26,9 +26,11 @@
       align-items: center;
       font-family: $Montserrat;
       svg {
-        padding-right: 40px;
         width: 26px;
         height: 12px;
+      }
+      span {
+        padding-left: 20px;
       }
     }
     &:hover {
@@ -39,33 +41,10 @@
       }
     }
   }
-  .down-arrow {
-    color: $light-blue;
-    font-size: 29px;
-    padding: 20px;
-    bottom: -15px;
-    right: 0;
-    left: 0;
-    margin: auto;
-    position: absolute;
-    cursor: pointer;
-    &:hover {
-      animation: updown 1s ease-in-out 0s infinite;
-    }
-    @media #{$large-desktop-up} {
-        right: 50px;
-    }
-  }
 
   @media #{$desktop-up} {
     .link {
       font-size: 40px;
-    }
-    .down-arrow {
-      bottom: -51px;
-      right: 0;
-      left: auto;
-      margin: auto;
     }
   }
 }

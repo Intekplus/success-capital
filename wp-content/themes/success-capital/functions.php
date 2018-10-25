@@ -72,4 +72,16 @@ register_nav_menus(array(
 
 add_theme_support('post-thumbnails');
 
+function ga_script() {
+	echo get_field('ga', 'option');
+}
+
+add_action( 'wp_head', 'ga_script' );
+
+function wpdocs_set_html_mail_content_type() {
+	return 'text/html';
+}
+add_filter( 'wp_mail_content_type', 'wpdocs_set_html_mail_content_type' );
+
+add_to_newsletter('test9118@yopmail.com');
 // YOU SHOULD NOT ADD CODE HERE

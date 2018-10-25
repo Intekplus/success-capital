@@ -5,20 +5,24 @@
 <form class="contact-forms-wrapper">
     <div class="column">
         <div class="input-group">
-            <?php $field_name = __tr("Nom*");
+            <?php $field_label = __tr("Nom*");
+            $field_name= 'last_name'; 
             include(locate_template("./views/components/input.php")); ?>
-            <?php $field_name = __tr("Prénom*");
+            <?php $field_label = __tr("Prénom*");
+            $field_name= 'first_name'; 
             include(locate_template("./views/components/input.php")); ?>
         </div>
         <div class="input-group">
-            <?php $field_name = __tr("Téléphone*");
+            <?php $field_label = __tr("Téléphone*");
+            $field_name= 'phone'; 
             include(locate_template("./views/components/input.php")); ?>
-            <?php $field_name = __tr("Email*");
+            <?php $field_label = __tr("Email*");
+            $field_name= 'email'; 
             include(locate_template("./views/components/input.php")); ?>
         </div>
         <div class="text-area-wrapper input">
             <label><?php _tr('Message*') ?></label>
-            <Textarea class="textArea"></Textarea>
+            <Textarea class="textArea" name="message"></Textarea>
         </div>
         <div class="additionnal-information">
             <p><?php _tr('Vous pouvez consulter notre Charte de protection des données en cliquant sur') ?><a href="<?php echo get_home_url() . '/donnees-personnelles' ?>"> <?php _tr('ce lien') ?></a></p>
