@@ -1,6 +1,15 @@
 .contact-forms-wrapper {
   display: flex;
   flex-wrap: wrap;
+  .loader-container {
+    flex: 1;
+    text-align: center;
+    margin-top: 30px;
+    img {
+      height: 50px;
+      width: 50px;
+    }
+  }
   .column {
     color: $black;
     flex: 100%;

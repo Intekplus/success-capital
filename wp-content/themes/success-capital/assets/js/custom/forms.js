@@ -1,6 +1,5 @@
 $(function() {
-  function sendMail(fields) {
-    console.log(fields)
+  function sendMail(fields, form) {
     $.ajax({
       url: WPURLS.ajaxurl,
       data: {
@@ -8,9 +7,12 @@ $(function() {
         fields,
       },
       method: 'POST',
+      beforeSend: function(){
+        form.html('<div class="loader-container"><img src="../../wp-content/themes/success-capital/assets/img/images/loader.gif"></div>');
+      },
       success: function(data) {
         if(data === 'success'){
-          console.log('sent')
+          form.html('<p>Message envoyé!</p>');
         } else {
           console.log('error')
         }
@@ -21,7 +23,8 @@ $(function() {
     });
   }
 
-  $('.submit-button a').click(function() {
+  $('.submit-button a').click(function(e) {
+    e.preventDefault();
     const form = $(this).parents('form');
     let send = true;
 
@@ -35,7 +38,7 @@ $(function() {
     });
 
     if (send) {
-      sendMail(form.serializeArray());
+      sendMail(form.serializeArray(), form);
     }
   });
 });

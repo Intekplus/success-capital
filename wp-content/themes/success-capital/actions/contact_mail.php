@@ -15,11 +15,8 @@ function send_contact_mail($fields)
   $message = "";
   foreach ($fields as $field) {
     $message .= "<p>${field['value']}</p>";
-    if ($field['name'] == 'email') {
-      $email = $field['value'];
-    }
   }
-  return wp_mail($email, 'Nouveau message', $message);
+  return wp_mail( get_field('email', 'option'), 'Nouveau message', $message);
 }
 
 add_action('wp_ajax_ajax_send_contact_mail', 'ajax_send_contact_mail');

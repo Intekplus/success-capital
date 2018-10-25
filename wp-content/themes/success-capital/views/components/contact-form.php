@@ -1,4 +1,4 @@
-<form class="contact-forms-wrapper">
+<div class="contact-forms-wrapper">
     <div class="column">
         <h2><?php the_sub_field('title') ?></h2>
         <p><?php the_sub_field('content') ?></p>
@@ -7,7 +7,7 @@
 		<span class="field"><i class="fas fa-phone"></i><a href="tel:<?php the_field('phone_number', 'option'); ?>"><?php the_field('phone_number', 'option'); ?></a></span>
         </div>
     </div>
-    <div class="column">
+    <form class="column">
         <div class="input-group">
             <?php $field_label=__tr("Nom*"); $field_name= 'last_name'; include( locate_template("./views/components/input.php")); ?>
             <?php $field_label=__tr("Prénom*"); $field_name= 'first_name'; include( locate_template("./views/components/input.php")); ?>
@@ -28,5 +28,5 @@
         <div class="submit-button">
             <a href="#" class="button bg-blue-left"><?php _tr('envoyer') ?> </a>
         </div>
-    </div>
-</form>
+    </form>
+</div>
