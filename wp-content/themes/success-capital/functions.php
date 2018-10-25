@@ -78,4 +78,9 @@ function ga_script() {
 
 add_action( 'wp_head', 'ga_script' );
 
+function wpdocs_set_html_mail_content_type() {
+	return 'text/html';
+}
+add_filter( 'wp_mail_content_type', 'wpdocs_set_html_mail_content_type' );
+
 // YOU SHOULD NOT ADD CODE HERE
