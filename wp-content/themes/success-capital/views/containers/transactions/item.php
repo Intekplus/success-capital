@@ -19,10 +19,10 @@
             <?php echo $data['location'] ?>
           </li>
           <li>
-          <img src="<?php echo get_site_url(); ?>/wp-content/themes/success-capital/assets/img/images/chambre.svg">
+          <img src="<?php echo get_site_url(); ?>/wp-content/themes/success-capital/assets/img/images/pieces.svg">
             <?php echo $data['rooms'];
             echo " ";
-            _tr('chambres') ?>
+            _tr('pièces') ?>
           </li>
           <li>
           <img src="<?php echo get_site_url(); ?>/wp-content/themes/success-capital/assets/img/images/dimensions.svg">
