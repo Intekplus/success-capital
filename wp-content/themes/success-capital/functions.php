@@ -83,5 +83,4 @@ function wpdocs_set_html_mail_content_type() {
 }
 add_filter( 'wp_mail_content_type', 'wpdocs_set_html_mail_content_type' );
 
-add_to_newsletter('test9118@yopmail.com');
 // YOU SHOULD NOT ADD CODE HERE
